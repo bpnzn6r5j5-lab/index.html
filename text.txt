@@ -1,0 +1,3371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Document character encoding set to UTF-8 -->
+  <meta charset="UTF-8">
+  <!-- Responsive viewport meta tag for mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Meta description for SEO -->
+  <meta name="description" content="MORALES ENTERGALACTIC - Nigerian educational platform for WAEC, NECO, JAMB, GCE past questions, study tools and exam countdowns">
+  <!-- Page title for browser tab -->
+  <title>MORALES ENTERGALACTIC | Reaching to the Skies in Your Mind</title>
+  <!-- PWA theme color for mobile home screen display -->
+  <meta name="theme-color" content="#070713">
+  <!-- PWA mobile web app capability for installability -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- PWA apple mobile web app capable flag -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- PWA apple web app status bar style -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- PWA apple web app title -->
+  <meta name="apple-mobile-web-app-title" content="MORALES ENTERGALACTIC">
+  <!-- Inline SVG favicon encoded as a data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%237c3aed'/%3E%3Ccircle cx='50' cy='50' r='24' fill='%2322d3ee'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23ec4899'/%3E%3C/svg%3E">
+  <!-- Inline manifest for PWA installation on mobile -->
+  <link rel="manifest" id="manifest" href="#">
+  <!-- Application specific styles in a style tag -->
+  <style>
+    /* Root CSS custom properties defining the cosmic color palette */
+    :root {
+      /* Deep space background color */
+      --bg: #070713;
+      /* Slightly lighter cosmic surface color */
+      --bg-2: #0d0d24;
+      /* Cosmic violet brand color */
+      --violet: #7c3aed;
+      /* Neon cyan accent color */
+      --cyan: #22d3ee;
+      /* Soft magenta accent color */
+      --pink: #ec4899;
+      /* Electric blue accent color */
+      --blue: #3b82f6;
+      /* Neutral muted text color */
+      --text: #e5e5f5;
+      /* Dimmed muted text color */
+      --muted: #a5a5c8;
+      /* Faint subtle text color */
+      --faint: #7c7ca0;
+      /* Transparent glassmorphism panel background */
+      --glass: rgba(255, 255, 255, 0.05);
+      /* Soft glowing border color */
+      --glass-border: rgba(160, 150, 255, 0.2);
+      /* Stronger accent border color */
+      --glass-border-strong: rgba(160, 150, 255, 0.45);
+      /* Success green color */
+      --success: #34d399;
+      /* Danger red color */
+      --danger: #fb7185;
+      /* Warning amber color */
+      --warning: #fbbf24;
+      /* Standard box shadow value */
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+      /* Rounded corner radius value */
+      --radius: 18px;
+    }
+    /* Universal box sizing reset for predictable layout */
+    * { box-sizing: border-box; }
+    /* Reset default margin and padding on all elements */
+    html, body { margin: 0; padding: 0; }
+    /* Base body styling with cosmic background and smooth scroll */
+    body {
+      /* Fixed multi-layered radial and linear cosmic gradient background */
+      background:
+        radial-gradient(1200px 600px at 15% -10%, rgba(124, 58, 237, 0.25), transparent 60%),
+        radial-gradient(900px 500px at 90% 5%, rgba(34, 211, 238, 0.15), transparent 60%),
+        radial-gradient(800px 600px at 50% 120%, rgba(236, 72, 153, 0.15), transparent 60%),
+        var(--bg);
+      /* Main readable light text color */
+      color: var(--text);
+      /* Sans-serif system font stack */
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      /* Smooth scrolling behavior for anchor links */
+      scroll-behavior: smooth;
+      /* Ensure content flows without extra scrollbars */
+      min-height: 100vh;
+      /* Prevent horizontal overflow on small screens */
+      overflow-x: hidden;
+    }
+    /* Full-screen animated star canvas layer */
+    #stars {
+      /* Position fixed to stay behind content */
+      position: fixed;
+      /* Align to top-left of viewport */
+      inset: 0;
+      /* Keep stars behind all other content */
+      z-index: 0;
+      /* Pointer events disabled so stars don't block clicks */
+      pointer-events: none;
+    }
+    /* Decorative floating planet element styles */
+    .planet {
+      /* Position fixed so planets stay in place while scrolling */
+      position: fixed;
+      /* Sit behind main content */
+      z-index: 0;
+      /* No pointer events so planets don't interfere */
+      pointer-events: none;
+      /* Rounded shape for circular planets */
+      border-radius: 50%;
+      /* Slow floating animation */
+      animation: floatPlanet 18s ease-in-out infinite;
+    }
+    /* Slow planet floating keyframes */
+    @keyframes floatPlanet {
+      /* Start position offset */
+      0%, 100% { transform: translateY(0); }
+      /* Middle position offset for gentle drift */
+      50% { transform: translateY(-24px); }
+    }
+    /* Main application container with z-index above background */
+    .app {
+      /* Position relative to layer above background */
+      position: relative;
+      /* Sit above the fixed star canvas */
+      z-index: 1;
+      /* Constrain content width for readability */
+      max-width: 1200px;
+      /* Center the application horizontally */
+      margin: 0 auto;
+      /* Horizontal padding for mobile and desktop */
+      padding: 0 16px;
+    }
+    /* Top site header layout */
+    header {
+      /* Sticky positioning so navigation stays visible */
+      position: sticky;
+      /* Keep header pinned to the top of the viewport */
+      top: 0;
+      /* Layer header above scrolling content */
+      z-index: 10;
+      /* Horizontal padding on both sides */
+      padding: 14px 16px;
+      /* Flex layout for logo and controls */
+      display: flex;
+      /* Align items vertically centered */
+      align-items: center;
+      /* Spread items across the header row */
+      justify-content: space-between;
+      /* Glassmorphism translucent panel background */
+      background: rgba(8, 8, 22, 0.72);
+      /* Backdrop blur for frosted glass effect */
+      backdrop-filter: blur(14px);
+      /* Soft bottom border glow separator */
+      border-bottom: 1px solid var(--glass-border);
+    }
+    /* Brand logo group container */
+    .brand {
+      /* Flex layout to align logo image and text */
+      display: flex;
+      /* Vertically center logo image and text */
+      align-items: center;
+      /* Spacing between logo image and text */
+      gap: 12px;
+    }
+    /* Brand logo image element */
+    .brand-logo {
+      /* Rounded shape for the logo image */
+      border-radius: 12px;
+      /* Soft outer glow around the logo */
+      box-shadow: 0 0 18px rgba(124, 58, 237, 0.6);
+      /* Fixed height for the logo image */
+      height: 46px;
+      /* Auto width preserves aspect ratio */
+      width: auto;
+    }
+    /* Brand name text */
+    .brand-name {
+      /* Large bold brand title */
+      font-size: 1.1rem;
+      /* Extra bold weight for the brand name */
+      font-weight: 800;
+      /* Letter spacing for a space-age feel */
+      letter-spacing: 0.04em;
+      /* Gradient text effect using background clip */
+      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+      /* Use background as the text color */
+      -webkit-background-clip: text;
+      /* Fallback for standard background clip */
+      background-clip: text;
+      /* Hide the original text color for the gradient */
+      -webkit-text-fill-color: transparent;
+    }
+    /* Brand motto subtext */
+    .brand-motto {
+      /* Small muted tagline under the brand */
+      font-size: 0.65rem;
+      /* Muted text color for the tagline */
+      color: var(--muted);
+      /* Uppercase for a badge-like appearance */
+      text-transform: uppercase;
+      /* Wide letter spacing for the tagline */
+      letter-spacing: 0.12em;
+    }
+    /* Desktop horizontal navigation menu */
+    nav {
+      /* Horizontal layout for navigation links */
+      display: flex;
+      /* Gap between navigation links */
+      gap: 6px;
+      /* Hide navigation on mobile by default */
+      display: none;
+    }
+    /* Individual navigation link styles */
+    nav a {
+      /* Smaller readable link font size */
+      font-size: 0.82rem;
+      /* Default link text color */
+      color: var(--muted);
+      /* Padding around each navigation link */
+      padding: 8px 12px;
+      /* Rounded corners on navigation links */
+      border-radius: 10px;
+      /* No underlines on navigation links */
+      text-decoration: none;
+      /* Uppercase navigation labels */
+      text-transform: uppercase;
+      /* Small letter spacing for labels */
+      letter-spacing: 0.04em;
+      /* Smooth color transition on hover */
+      transition: 0.2s;
+      /* No pointer cursor change needed */
+      cursor: pointer;
+    }
+    /* Active navigation link highlight style */
+    nav a.active,
+    nav a:hover {
+      /* Bright text color when active or hovered */
+      color: var(--text);
+      /* Translucent violet background for active links */
+      background: rgba(124, 58, 237, 0.18);
+      /* Soft border on active links */
+      border: 1px solid var(--glass-border);
+    }
+    /* Header right-side controls container */
+    .header-actions {
+      /* Layout for control buttons */
+      display: flex;
+      /* Small gap between controls */
+      gap: 8px;
+      /* Vertically center controls */
+      align-items: center;
+    }
+    /* Shared button base styles */
+    .btn {
+      /* Padding for button clickable area */
+      padding: 10px 16px;
+      /* Rounded button corners */
+      border-radius: 12px;
+      /* No border by default */
+      border: 1px solid transparent;
+      /* Bold readable button text */
+      font-weight: 700;
+      /* Slightly smaller button font */
+      font-size: 0.82rem;
+      /* Pointer cursor for buttons */
+      cursor: pointer;
+      /* Smooth transition for hover effects */
+      transition: 0.2s;
+      /* Center text within button */
+      text-align: center;
+      /* No underlines on button links */
+      text-decoration: none;
+      /* Display as inline block */
+      display: inline-block;
+    }
+    /* Primary glowing violet button */
+    .btn-primary {
+      /* Violet background for primary actions */
+      background: linear-gradient(90deg, var(--violet), var(--blue));
+      /* White text for primary buttons */
+      color: #fff;
+      /* Glowing shadow around primary buttons */
+      box-shadow: 0 0 18px rgba(124, 58, 237, 0.5);
+    }
+    /* Primary button hover lift effect */
+    .btn-primary:hover {
+      /* Slight upward lift on hover */
+      transform: translateY(-2px);
+      /* Stronger glow on hover */
+      box-shadow: 0 0 26px rgba(124, 58, 237, 0.8);
+    }
+    /* Secondary cyan outline button */
+    .btn-cyan {
+      /* Translucent cyan background */
+      background: rgba(34, 211, 238, 0.12);
+      /* Cyan border for secondary buttons */
+      border: 1px solid var(--cyan);
+      /* Cyan text color */
+      color: var(--cyan);
+    }
+    /* Cyan button hover fill effect */
+    .btn-cyan:hover {
+      /* Filled cyan background on hover */
+      background: var(--cyan);
+      /* Dark text on filled hover state */
+      color: #04121a;
+    }
+    /* Ghost transparent button */
+    .btn-ghost {
+      /* Transparent background */
+      background: transparent;
+      /* Subtle border for ghost buttons */
+      border: 1px solid var(--glass-border);
+      /* Muted text color */
+      color: var(--muted);
+    }
+    /* Ghost button hover color change */
+    .btn-ghost:hover {
+      /* Brighter text on hover */
+      color: var(--text);
+      /* Brighter border on hover */
+      border-color: var(--glass-border-strong);
+    }
+    /* Small compact button size */
+    .btn-sm {
+      /* Reduced padding for small buttons */
+      padding: 7px 11px;
+      /* Smaller font for small buttons */
+      font-size: 0.72rem;
+      /* Smaller radius for small buttons */
+      border-radius: 9px;
+    }
+    /* Section block shared styling */
+    section {
+      /* Vertical padding between sections */
+      padding: 48px 0;
+      /* Fade in entry animation */
+      animation: fadeIn 0.6s ease;
+    }
+    /* Section fade in keyframes */
+    @keyframes fadeIn {
+      /* Start invisible and slightly below */
+      from { opacity: 0; transform: translateY(14px); }
+      /* End fully visible and in place */
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Section heading text */
+    .section-title {
+      /* Large heading font size */
+      font-size: 1.7rem;
+      /* Bold heading weight */
+      font-weight: 800;
+      /* Gradient cosmic text effect */
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+      /* Use gradient as text color */
+      -webkit-background-clip: text;
+      /* Standard background clip fallback */
+      background-clip: text;
+      /* Hide original heading color */
+      -webkit-text-fill-color: transparent;
+      /* No default top margin */
+      margin: 0 0 4px;
+    }
+    /* Section subtitle text */
+    .section-sub {
+      /* Smaller muted subtitle text */
+      color: var(--muted);
+      /* No default margins */
+      margin: 0 0 22px;
+      /* Smaller subtitle font size */
+      font-size: 0.95rem;
+    }
+    /* Grid layout helper for responsive columns */
+    .grid {
+      /* CSS grid layout */
+      display: grid;
+      /* Two columns by default for desktop */
+      grid-template-columns: repeat(2, 1fr);
+      /* Gap between grid cells */
+      gap: 16px;
+    }
+    /* Three column grid helper */
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    /* Four column grid helper */
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    /* Glassmorphism card component */
+    .card {
+      /* Translucent glass panel background */
+      background: var(--glass);
+      /* Backdrop blur for frosted effect */
+      backdrop-filter: blur(10px);
+      /* Soft glowing border */
+      border: 1px solid var(--glass-border);
+      /* Rounded card corners */
+      border-radius: var(--radius);
+      /* Padding inside the card */
+      padding: 18px;
+      /* Deep shadow for depth */
+      box-shadow: var(--shadow);
+      /* Smooth hover transition */
+      transition: 0.25s;
+    }
+    /* Card hover lift and glow effect */
+    .card:hover {
+      /* Lift card on hover */
+      transform: translateY(-4px);
+      /* Brighter border on hover */
+      border-color: var(--glass-border-strong);
+    }
+    /* Card heading text */
+    .card h3 {
+      /* Bold card title */
+      margin: 0 0 10px;
+      /* Medium card title size */
+      font-size: 1.05rem;
+    }
+    /* Small muted paragraph inside cards */
+    .card p {
+      /* Muted text color for card body */
+      color: var(--muted);
+      /* Small paragraph font size */
+      font-size: 0.9rem;
+      /* Tight line spacing */
+      line-height: 1.5;
+      /* No default margin */
+      margin: 0;
+    }
+    /* Pill badge styling */
+    .pill {
+      /* Inline pill display */
+      display: inline-block;
+      /* Small pill padding */
+      padding: 4px 10px;
+      /* Fully rounded pill corners */
+      border-radius: 999px;
+      /* Small pill font size */
+      font-size: 0.7rem;
+      /* Uppercase pill labels */
+      text-transform: uppercase;
+      /* Letter spacing on pills */
+      letter-spacing: 0.06em;
+      /* Translucent violet background */
+      background: rgba(124, 58, 237, 0.15);
+      /* Violet border on pills */
+      border: 1px solid var(--glass-border);
+      /* Cyan pill text */
+      color: var(--cyan);
+    }
+    /* Success pill color variant */
+    .pill.ok {
+      /* Green pill background */
+      background: rgba(52, 211, 153, 0.15);
+      /* Green pill border */
+      border-color: rgba(52, 211, 153, 0.4);
+      /* Green pill text */
+      color: var(--success);
+    }
+    /* Warning pill color variant */
+    .pill.warn {
+      /* Amber pill background */
+      background: rgba(251, 191, 36, 0.15);
+      /* Amber pill border */
+      border-color: rgba(251, 191, 36, 0.4);
+      /* Amber pill text */
+      color: var(--warning);
+    }
+    /* Form label styling */
+    label {
+      /* Small bold label text */
+      display: block;
+      /* Smaller label font size */
+      font-size: 0.8rem;
+      /* Muted label color */
+      color: var(--muted);
+      /* Label margin before the input */
+      margin-bottom: 6px;
+      /* Label top spacing */
+      margin-top: 12px;
+    }
+    /* Form input and select styling */
+    input, select, textarea {
+      /* Dark translucent input background */
+      background: rgba(10, 10, 30, 0.6);
+      /* Input border */
+      border: 1px solid var(--glass-border);
+      /* Rounded input corners */
+      border-radius: 10px;
+      /* Input padding */
+      padding: 11px 13px;
+      /* Full width inputs for forms */
+      width: 100%;
+      /* Light input text color */
+      color: var(--text);
+      /* Match body font */
+      font-family: inherit;
+      /* Smooth focus transition */
+      transition: 0.2s;
+    }
+    /* Input focus glow state */
+    input:focus, select:focus, textarea:focus {
+      /* Brighter border on focus */
+      border-color: var(--cyan);
+      /* Cyan glow around focused input */
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.3);
+      /* Remove default focus outline */
+      outline: none;
+    }
+    /* Question card within past questions list */
+    .question {
+      /* Card styling for question blocks */
+      background: var(--glass);
+      /* Border and radius for question blocks */
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      /* Question padding */
+      padding: 14px;
+      /* Vertical spacing between questions */
+      margin-bottom: 12px;
+    }
+    /* Question prompt text */
+    .question .qtext {
+      /* Readable question prompt */
+      font-size: 0.95rem;
+      /* Question prompt margin below */
+      margin-bottom: 10px;
+    }
+    /* Answer choice option row */
+    .choice {
+      /* Flex row for choice letter and text */
+      display: flex;
+      /* Small gap between letter and text */
+      gap: 10px;
+      /* Choice row padding */
+      padding: 9px 11px;
+      /* Rounded choice corners */
+      border-radius: 10px;
+      /* Choice hover background */
+      cursor: pointer;
+      /* Smooth transition */
+      transition: 0.15s;
+    }
+    /* Choice hover highlight */
+    .choice:hover {
+      /* Translucent violet hover background */
+      background: rgba(124, 58, 237, 0.12);
+    }
+    /* Correct answer choice highlight */
+    .choice.correct {
+      /* Green background for correct choices */
+      background: rgba(52, 211, 153, 0.18);
+      /* Green left border indicator */
+      border-left: 3px solid var(--success);
+    }
+    /* Incorrect answer choice highlight */
+    .choice.wrong {
+      /* Red background for incorrect choices */
+      background: rgba(251, 113, 133, 0.18);
+      /* Red left border indicator */
+      border-left: 3px solid var(--danger);
+    }
+    /* Score summary box */
+    .score-box {
+      /* Distinct background for score panel */
+      background: rgba(124, 58, 237, 0.14);
+      /* Rounded score panel corners */
+      border-radius: 14px;
+      /* Score panel border */
+      border: 1px solid var(--glass-border-strong);
+      /* Score panel padding */
+      padding: 16px;
+      /* Vertical space before the panel */
+      margin-top: 14px;
+    }
+    /* Stat number display */
+    .stat-num {
+      /* Large bold stat numbers */
+      font-size: 1.6rem;
+      /* Gradient stat number color */
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* Bold weight */
+      font-weight: 800;
+    }
+    /* Countdown digit block */
+    .count-box {
+      /* Centered countdown unit */
+      text-align: center;
+      /* Glow background for each unit */
+      background: rgba(255, 255, 255, 0.04);
+      /* Rounded countdown corners */
+      border-radius: 14px;
+      /* Countdown padding */
+      padding: 16px 6px;
+      /* Subtle border */
+      border: 1px solid var(--glass-border);
+    }
+    /* Countdown value text */
+    .count-val {
+      /* Large countdown digit size */
+      font-size: 2rem;
+      /* Bold countdown digits */
+      font-weight: 800;
+      /* Neon cyan countdown color */
+      color: var(--cyan);
+    }
+    /* Countdown unit label */
+    .count-label {
+      /* Small uppercase unit labels */
+      font-size: 0.65rem;
+      /* Muted label color */
+      color: var(--muted);
+      /* Uppercase labels */
+      text-transform: uppercase;
+      /* Letter spacing on labels */
+      letter-spacing: 0.1em;
+    }
+    /* Progress bar container */
+    .progress {
+      /* Track background for progress bars */
+      background: rgba(255, 255, 255, 0.08);
+      /* Rounded progress bar */
+      border-radius: 999px;
+      /* Progress bar height */
+      height: 10px;
+      /* Allow inner fill overflow */
+      overflow: hidden;
+      /* Margin below the bar */
+      margin-top: 8px;
+    }
+    /* Progress bar inner fill */
+    .progress > span {
+      /* Gradient fill for progress */
+      display: block;
+      /* Fill gradient colors */
+      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+      /* Rounded fill corners */
+      border-radius: 999px;
+      /* Animated fill width */
+      height: 100%;
+      /* Smooth width transition */
+      transition: width 0.5s ease;
+    }
+    /* Toast notification element */
+    .toast {
+      /* Fixed toast at bottom center */
+      position: fixed;
+      /* Center horizontally */
+      left: 50%;
+      /* Near bottom of viewport */
+      bottom: 24px;
+      /* Translate to center */
+      transform: translateX(-50%);
+      /* Glass panel background */
+      background: rgba(12, 12, 32, 0.95);
+      /* Toast border */
+      border: 1px solid var(--glass-border-strong);
+      /* Rounded toast corners */
+      border-radius: 12px;
+      /* Toast padding */
+      padding: 13px 18px;
+      /* Layer above all content */
+      z-index: 100;
+      /* Hidden by default */
+      opacity: 0;
+      /* Slight upward offset when hidden */
+      translate: 0 10px;
+      /* Smooth appearance transition */
+      transition: 0.3s;
+      /* Small toast font */
+      font-size: 0.85rem;
+      /* Pointer events disabled */
+      pointer-events: none;
+    }
+    /* Visible toast state */
+    .toast.show {
+      /* Fully visible toast */
+      opacity: 1;
+      /* Return to base position */
+      translate: 0 0;
+    }
+    /* Footer section */
+    footer {
+      /* Top border separator */
+      border-top: 1px solid var(--glass-border);
+      /* Footer padding */
+      padding: 30px 16px;
+      /* Muted footer text */
+      color: var(--faint);
+      /* Centered footer content */
+      text-align: center;
+      /* Small footer font */
+      font-size: 0.8rem;
+      /* Relative layer for footer */
+      position: relative;
+      /* Layer above stars */
+      z-index: 1;
+    }
+    /* Footer link styling */
+    footer a {
+      /* Muted footer link color */
+      color: var(--muted);
+      /* No underlines on footer links */
+      text-decoration: none;
+    }
+    /* Hidden utility class */
+    .hidden { display: none; }
+    /* Mobile navigation toggle button */
+    .menu-toggle {
+      /* Show toggle on mobile */
+      display: block;
+      /* Toggle button styling */
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      padding: 8px 12px;
+      color: var(--text);
+      cursor: pointer;
+    }
+    /* Utility to hide element on mobile only */
+    .mobile-hide { display: none; }
+    /* Mobile-first media queries for small screens */
+    @media (max-width: 700px) {
+      /* Single column grid on mobile */
+      .grid, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      /* Show mobile hamburger menu on small screens */
+      .menu-toggle { display: block; }
+      /* Hide desktop nav on small screens */
+      nav { display: none; }
+      /* Show mobile nav when opened */
+      nav.open {
+        /* Vertical nav layout on mobile */
+        display: flex;
+        /* Stack links vertically */
+        flex-direction: column;
+        /* Full width mobile nav */
+        position: absolute;
+        /* Drop below header */
+        top: 100%;
+        left: 0;
+        right: 0;
+        /* Panel background for mobile nav */
+        background: rgba(8, 8, 22, 0.97);
+        /* Mobile nav padding */
+        padding: 12px;
+        /* Nav border */
+        border-bottom: 1px solid var(--glass-border);
+      }
+      /* Reduce section padding on mobile */
+      section { padding: 34px 0; }
+      /* Show mobile-only label */
+      .mobile-hide { display: block; }
+      /* Smaller hero text on mobile */
+      .hero h1 { font-size: 1.6rem; }
+    }
+    /* Desktop media query for larger screens */
+    @media (min-width: 701px) {
+      /* Show desktop navigation on large screens */
+      nav { display: flex; }
+      /* Hide mobile menu toggle on desktop */
+      .menu-toggle { display: none; }
+    }
+    /* Hero section styles */
+    .hero {
+      /* Centered hero content */
+      text-align: center;
+      /* Larger top padding for hero */
+      padding: 60px 0 30px;
+    }
+    /* Hero main headline */
+    .hero h1 {
+      /* Large hero headline size */
+      font-size: 2.4rem;
+      /* Bold hero weight */
+      font-weight: 800;
+      /* Gradient headline color */
+      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* Tight hero line height */
+      line-height: 1.15;
+      /* No default margins */
+      margin: 12px 0;
+    }
+    /* Hero description text */
+    .hero p {
+      /* Muted hero description */
+      color: var(--muted);
+      /* Constrain description width for readability */
+      max-width: 620px;
+      /* Center description */
+      margin: 0 auto 22px;
+      /* Readable description size */
+      font-size: 1rem;
+    }
+    /* Hero action button row */
+    .hero-actions {
+      /* Center hero buttons */
+      display: flex;
+      /* Wrap buttons on small screens */
+      flex-wrap: wrap;
+      /* Gap between hero buttons */
+      gap: 10px;
+      /* Center the row */
+      justify-content: center;
+    }
+    /* Category chip row */
+    .chips {
+      /* Flow layout for chips */
+      display: flex;
+      /* Wrap chips */
+      flex-wrap: wrap;
+      /* Gap between chips */
+      gap: 8px;
+    }
+    /* Chip button styling */
+    .chip {
+      /* Chip padding */
+      padding: 9px 15px;
+      /* Rounded chip corners */
+      border-radius: 999px;
+      /* Chip background */
+      background: var(--glass);
+      /* Chip border */
+      border: 1px solid var(--glass-border);
+      /* Small chip font */
+      font-size: 0.82rem;
+      /* Chip text color */
+      color: var(--text);
+      /* Chip pointer cursor */
+      cursor: pointer;
+      /* Smooth chip transition */
+      transition: 0.2s;
+    }
+    /* Chip hover effect */
+    .chip:hover {
+      /* Brighter chip border on hover */
+      border-color: var(--cyan);
+      /* Chip lift on hover */
+      transform: translateY(-2px);
+    }
+    /* Selected chip state */
+    .chip.selected {
+      /* Filled selected chip background */
+      background: var(--violet);
+      /* White selected chip text */
+      color: #fff;
+      /* Selected chip glow */
+      box-shadow: 0 0 14px rgba(124, 58, 237, 0.6);
+    }
+    /* Subject card grid specific tweak */
+    .subject-card h4 {
+      /* Subject card title */
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+    /* Leaderboard row styling */
+    .rank-row {
+      /* Flex leaderboard row */
+      display: flex;
+      /* Space rank and score apart */
+      justify-content: space-between;
+      /* Row padding */
+      padding: 10px;
+      /* Row rounded corners */
+      border-radius: 10px;
+      /* Row hover background */
+      background: rgba(255, 255, 255, 0.03);
+      /* Row margin */
+      margin-bottom: 6px;
+    }
+    /* Rank number badge */
+    .rank-num {
+      /* Rank badge styling */
+      font-weight: 800;
+      /* Cyan rank color */
+      color: var(--cyan);
+      /* Minimum rank width */
+      min-width: 24px;
+    }
+    /* Note item list */
+    .note-item {
+      /* Note item styling */
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    /* Pomodoro display */
+    .timer-display {
+      /* Large timer digits */
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--cyan);
+      text-align: center;
+      font-family: "Consolas", monospace;
+      letter-spacing: 0.05em;
+    }
+    /* Announcement card */
+    .announce {
+      /* Distinct announcement style */
+      border-left: 4px solid var(--pink);
+      background: rgba(236, 72, 153, 0.08);
+    }
+    /* Admin table styling */
+    table {
+      /* Full width admin tables */
+      width: 100%;
+      /* Border collapse */
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    th, td {
+      /* Table cell padding */
+      padding: 10px;
+      /* Table bottom border */
+      border-bottom: 1px solid var(--glass-border);
+      text-align: left;
+    }
+    th {
+      /* Table header styling */
+      color: var(--muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    /* Scrollbar styling for webkit browsers */
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    /* Scrollbar track color */
+    ::-webkit-scrollbar-track { background: var(--bg-2); }
+    /* Scrollbar thumb color */
+    ::-webkit-scrollbar-thumb { background: var(--violet); border-radius: 999px; }
+  </style>
+</head>
+<body>
+  <!-- Animated star field canvas covering the viewport -->
+  <canvas id="stars"></canvas>
+  <!-- Decorative floating planet in the top right -->
+  <div class="planet" style="top:18%;right:8%;width:70px;height:70px;background:radial-gradient(circle at 30% 30%, #7c3aed, #1a1a3a);box-shadow:0 0 30px rgba(124,58,237,0.5);"></div>
+  <!-- Decorative floating planet in the bottom left -->
+  <div class="planet" style="bottom:22%;left:6%;width:44px;height:44px;background:radial-gradient(circle at 30% 30%, #22d3ee, #0a2a3a);box-shadow:0 0 24px rgba(34,211,238,0.5);animation-duration:22s;"></div>
+  <!-- Small decorative planet in the middle right -->
+  <div class="planet" style="top:45%;right:4%;width:28px;height:28px;background:radial-gradient(circle at 30% 30%, #ec4899, #3a0a1a);box-shadow:0 0 18px rgba(236,72,153,0.5);animation-duration:15s;"></div>
+
+  <!-- Main application container -->
+  <div class="app">
+    <!-- Site header with logo and navigation -->
+    <header>
+      <!-- Brand logo and name group -->
+      <div class="brand">
+        <!-- Logo image placeholder from placehold.co -->
+        <img class="brand-logo" src="https://placehold.co/90x90/7c3aed/22d3ee.png?text=M" alt="MORALES ENTERGALACTIC logo" />
+        <!-- Brand text container -->
+        <div>
+          <!-- Brand name text -->
+          <div class="brand-name">MORALES ENTERGALACTIC</div>
+          <!-- Brand motto tagline -->
+          <div class="brand-motto">Reaching to the skies in your mind</div>
+        </div>
+      </div>
+      <!-- Desktop navigation menu links -->
+      <nav id="mainNav">
+        <!-- Home navigation link -->
+        <a href="/test/" data-page="home" class="active">Home</a>
+        <!-- Past questions navigation link -->
+        <a href="/test/" data-page="past">Past Questions</a>
+        <!-- Study room navigation link -->
+        <a href="/test/" data-page="study">Study Room</a>
+        <!-- Subjects navigation link -->
+        <a href="/test/" data-page="subjects">Subjects</a>
+        <!-- Exam countdown navigation link -->
+        <a href="/test/" data-page="countdown">Exam Countdown</a>
+        <!-- Student dashboard navigation link -->
+        <a href="/test/" data-page="dashboard">Dashboard</a>
+        <!-- About us navigation link -->
+        <a href="/test/" data-page="about">About Us</a>
+        <!-- Admin dashboard navigation link -->
+        <a href="/test/" data-page="admin">Admin</a>
+      </nav>
+      <!-- Header action buttons container -->
+      <div class="header-actions">
+        <!-- Mobile menu toggle button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">&#9776;</button>
+        <!-- Login / account button -->
+        <button class="btn btn-primary btn-sm" id="authBtn">Sign In</button>
+      </div>
+    </header>
+
+    <!-- Page content container where each view renders -->
+    <main id="view"></main>
+  </div>
+
+  <!-- Footer with branding and links -->
+  <footer>
+    <!-- Footer copyright text -->
+    <div>© 2026 MORALES ENTERGALACTIC — Reaching to the skies in your mind.</div>
+    <!-- Footer tagline line -->
+    <div>A futuristic learning universe for Nigerian students preparing for WAEC, NECO, JAMB &amp; GCE.</div>
+    <!-- Footer navigation links -->
+    <div style="margin-top:12px;">
+      <!-- About link in footer -->
+      <a href="/test/" data-goto="about">About</a>
+      <!-- Privacy link in footer -->
+      <a href="/test/" data-goto="about">Privacy</a>
+      <!-- Terms link in footer -->
+      <a href="/test/" data-goto="about">Terms</a>
+    </div>
+  </footer>
+
+  <!-- Toast notification element -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Application logic in vanilla JavaScript -->
+  <script>
+    // Application state object holding all runtime data
+    const App = {
+      // Currently active page view name
+      page: "home",
+      // Selected examination type filter
+      exam: "WAEC",
+      // Selected subject filter
+      subject: "Mathematics",
+      // Selected examination year filter
+      year: "2023",
+      // Search query for past questions
+      search: "",
+      // Bookmarked question ids
+      bookmarks: [],
+      // Student progress statistics
+      stats: { attempted: 0, correct: 0, sessions: 0, streak: 3, hours: 42 },
+      // Current user account object or null for guest
+      user: null,
+      // Admin session flag
+      admin: false
+    };
+
+    // Examination types with their official 2025 date ranges (admin-editable defaults)
+    const Exams = {
+      "WAEC": { name: "WAEC (West African Examinations Council)", start: "2025-05-05", end: "2025-06-19" },
+      "NECO": { name: "NECO (Nigerian Examinations Council)", start: "2025-04-14", end: "2025-05-08" },
+      "JAMB": { name: "JAMB / UTME (Joint Admissions Board)", start: "2025-03-29", end: "2025-04-04" },
+      "GCE": { name: "GCE (General Certificate of Education)", start: "2025-05-05", end: "2025-06-19" }
+    };
+
+    // Subject catalogue used across the platform
+    const Subjects = [
+      "Mathematics", "English Language", "Biology", "Chemistry", "Physics",
+      "Economics", "Government", "Literature", "Commerce", "Accounting",
+      "Geography", "Civic Education", "Agricultural Science"
+    ];
+
+    // Examination years available for past questions
+    const Years = ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015"];
+
+    // Daily motivational quotes for students
+    const Quotes = [
+      "Every question you solve today is a star you light in tomorrow's sky.",
+      "Discipline is the bridge between your dreams and your WAEC results.",
+      "Small consistent steps build a galaxy of knowledge.",
+      "You are not behind. Your journey begins with the next question.",
+      "Success is the sum of small efforts repeated daily."
+    ];
+
+    // Subject library with simplified notes, formulas, definitions and worked examples
+    const SubjectLibrary = {
+      "Mathematics": {
+        notes: "Mathematics is the language of quantity and structure. For GCE, focus on algebra, geometry, trigonometry and statistics.",
+        topics: ["Algebra", "Geometry", "Trigonometry", "Statistics", "Differentiation"],
+        definitions: ["Mean = sum of values / number of values", "Gradient = rise / run"],
+        formulas: ["a² + b² = c² (Pythagoras)", "Area of circle = πr²", "Quadratic formula: x = (-b ± √(b²-4ac)) / 2a"],
+        examples: ["If a = 5, b = 12, then c = √(25+144) = 13."],
+        summary: "Memorise key formulas; practise past questions weekly; show all working in exams."
+      },
+      "English Language": {
+        notes: "English is about communication. Focus on comprehension, oral forms, oral English, grammar and composition.",
+        topics: ["Comprehension", "Oral English", "Grammar", "Summary Writing", "Essay Composition"],
+        definitions: ["Metaphor = a figure of speech comparing two unlike things without using like or as", "Antithesis = contrasting ideas in parallel structure"],
+        formulas: ["None (language subject)"],
+        examples: ["Summary: capture main points in fewer words without copying phrases."],
+        summary: "Read widely; revise grammar rules; practise writing essays under time pressure."
+      },
+      "Biology": {
+        notes: "Biology studies life. Master cells, genetics, plant and animal physiology and ecology.",
+        topics: ["Cell Biology", "Genetics", "Ecology", "Human Physiology", "Reproduction"],
+        definitions: ["Cell = the basic unit of life", "Organism = any living thing"],
+        formulas: ["Genetics: Punnett square ratio 3:1 for monohybrid cross"],
+        examples: ["A cell is the smallest unit that can carry out all life processes."],
+        summary: "Learn definitions cold; diagram labelling matters; link concepts to real examples."
+      },
+      "Chemistry": {
+        notes: "Chemistry is the study of matter and reactions. Focus on atomic structure, bonding and organic chemistry.",
+        topics: ["Atomic Structure", "Chemical Bonding", "Organic Chemistry", "Electrochemistry", "Stoichiometry"],
+        definitions: ["Mole = 6.022 × 10²³ particles", "pH = -log[H⁺]"],
+        formulas: ["Molar mass = (atomic number × relative atomic mass)", "Avogadro's law: V proportional to n"],
+        examples: ["H₂O molar mass = 2(1) + 16 = 18 g/mol."],
+        summary: "Balance equations; memorise periodic trends; practise calculations with units."
+      },
+      "Physics": {
+        notes: "Physics explains motion and energy. Focus on mechanics, electricity and waves.",
+        topics: ["Mechanics", "Electricity", "Optics", "Heat", "Waves"],
+        definitions: ["Force = mass × acceleration", "Power = work / time"],
+        formulas: ["v = u + at", "E = mc²", "Ohm's law: V = IR"],
+        examples: ["If u = 0, a = 2 m/s², t = 3 s, then v = 6 m/s."],
+        summary: "Show units; use formula sheets; draw free-body diagrams for mechanics."
+      },
+      "Economics": {
+        notes: "Economics studies choice and scarcity. Focus on micro and macro concepts and graphs.",
+        topics: ["Consumer Theory", "National Income", "Inflation", "Money & Banking", "Government Budgets"],
+        definitions: ["Opportunity cost = value of the next best alternative forgone", "Inflation = sustained rise in the general price level"],
+        formulas: ["Inflation % = (change in price index / old index) × 100"],
+        examples: ["If CPI goes from 100 to 110, inflation = 10%."],
+        summary: "Master graph interpretation; learn definitions; link concepts to Nigerian examples."
+      },
+      "Government": {
+        notes: "Government studies political systems and the Nigerian constitution. Focus on institutions and democracy.",
+        topics: ["Nigerian Constitution", "The Executive", "The Legislature", "The Judiciary", "Elections"],
+        definitions: ["Separation of powers = division between executive, legislature and judiciary", "Fundamental rights = basic rights protected by the constitution"],
+        formulas: ["None (civics subject)"],
+        examples: ["The President is the head of government in Nigeria's presidential system."],
+        summary: "Learn the structure of the three arms of government; memorise key constitution sections."
+      },
+      "Literature": {
+        notes: "Literature is the study of prose, drama and poetry. Focus on prescribed and unprescribed texts.",
+        topics: ["Prose", "Drama", "Poetry", "Themes", "Critical Analysis"],
+        definitions: ["Alliteration = repetition of initial consonant sounds", "Aubade = a poem about the morning"],
+        formulas: ["None (literary subject)"],
+        examples: ["In a drama analysis, link a character's actions to the theme of the play."],
+        summary: "Read texts twice; note key quotes; practise essay structure and thesis statements."
+      },
+      "Commerce": {
+        notes: "Commerce studies trade, banking and business. Focus on commercial principles and documents.",
+        topics: ["Trade", "Banking", "Marketing", "Insurance", "Business Law"],
+        definitions: ["E-commerce = buying and selling over the internet", "Stock = goods held for sale"],
+        formulas: ["Profit = Sales - Cost"],
+        examples: ["If sales are ₦100 and cost is ₦70, profit is ₦30."],
+        summary: "Learn commercial terms; understand common business documents; relate to real businesses."
+      },
+      "Accounting": {
+        notes: "Accounting records and reports business transactions. Focus on the double-entry system and financial statements.",
+        topics: ["Double Entry", "Ledgers", "Trial Balance", "Financial Statements", "Ratio Analysis"],
+        definitions: ["Asset = resource owned by a business", "Liability = amount owed by a business"],
+        formulas: ["Assets = Liabilities + Capital"],
+        examples: ["A purchase increases inventory (asset) and increases creditors (liability)."],
+        summary: "Balance your trial balance; practise journal entries; understand financial statement format."
+      },
+      "Geography": {
+        notes: "Geography studies the earth and its inhabitants. Focus on physical and human geography.",
+        topics: ["Earth's Movements", "Climate", "Population", "Agriculture", "Urbanisation"],
+        definitions: ["Latitude = angular distance north or south of the equator", "Climate = long-term average weather"],
+        formulas: ["Population density = population / area"],
+        examples: ["If a country has 10,000,000 people and 200,000 km², density = 50 per km²."],
+        summary: "Map work is essential; learn key physical processes; relate to Nigerian case studies."
+      },
+      "Civic Education": {
+        notes: "Civic education builds responsible citizenship. Focus on rights, responsibilities and national values.",
+        topics: ["Patriotism", "Human Rights", "National Values", "Democracy", "Conflict Resolution"],
+        definitions: ["Civics = study of citizen rights and duties", "Patriotism = love of one's country"],
+        formulas: ["None (civics subject)"],
+        examples: ["A citizen's duty includes obeying the law and paying taxes."],
+        summary: "Link rights to responsibilities; learn national values; know the constitution's human rights chapter."
+      },
+      "Agricultural Science": {
+        notes: "Agricultural science studies farming and food production. Focus on crop and livestock production.",
+        topics: ["Soil Science", "Crop Production", "Livestock", "Agricultural Economics", "Food Processing"],
+        definitions: ["Irrigation = supplying water to crops", "Monoculture = growing one crop type over a large area"],
+        formulas: ["Yield = total output / land area"],
+        examples: ["Irrigation allows farming in dry seasons where rainfall is unreliable."],
+        summary: "Know farming methods; learn crop and livestock names; understand market concepts."
+      }
+    };
+
+    // Practice question bank (clearly labelled as generated practice questions, not official past questions)
+    const QuestionBank = [
+      { exam: "WAEC", subject: "Mathematics", year: "2023", type: "practice", q: "Simplify: 2x + 3x - 5x", choices: ["0", "10x", "x", "-x"], answer: 0, explain: "Combine like terms: 2x + 3x = 5x, and 5x - 5x = 0." },
+      { exam: "WAEC", subject: "Mathematics", year: "2023", type: "practice", q: "What is 15% of 200?", choices: ["30", "35", "40", "15"], answer: 0, explain: "15% of 200 = 0.15 × 200 = 30." },
+      { exam: "WAEC", subject: "Biology", year: "2023", type: "practice", q: "Which organelle is known as the powerhouse of the cell?", choices: ["Nucleus", "Mitochondria", "Ribosome", "Golgi body"], answer: 1, explain: "The mitochondria generates most of the cell's ATP energy." },
+      { exam: "WAEC", subject: "Physics", year: "2023", type: "practice", q: "The SI unit of force is the:", choices: ["Joule", "Watt", "Newton", "Pascal"], answer: 2, explain: "Force is measured in newtons (N)." },
+      { exam: "WAEC", subject: "Chemistry", year: "2023", type: "practice", q: "Which element has the symbol 'Na'?", choices: ["Nitrogen", "Sodium", "Nickel", "Neon"], answer: 1, explain: "Sodium's symbol is Na, from its Latin name Natrium." },
+      { exam: "WAEC", subject: "Economics", year: "2023", type: "practice", q: "Opportunity cost is best described as:", choices: ["The money spent on a purchase", "The value of the next best alternative forgone", "The total cost of production", "The tax on goods"], answer: 1, explain: "Opportunity cost is what you give up to choose one option over the next best one." },
+      { exam: "WAEC", subject: "Government", year: "2023", type: "practice", q: "How many states are in the Federal Republic of Nigeria?", choices: ["34", "36", "37", "38"], answer: 2, explain: "Nigeria currently has 36 states plus the FCT." },
+      { exam: "WAEC", subject: "English Language", year: "2023", type: "practice", q: "Choose the correct plural of 'cactus':", choices: ["Cacti", "Cactus", "Cactuses", "Cactis"], answer: 0, explain: "'Cacti' is the standard Latin plural; 'cactuses' is also accepted." },
+      { exam: "NECO", subject: "Mathematics", year: "2022", type: "practice", q: "If a = 3 and b = 4, what is a² + b²?", choices: ["25", "7", "49", "12"], answer: 0, explain: "a² + b² = 9 + 16 = 25." },
+      { exam: "NECO", subject: "Biology", year: "2022", type: "practice", q: "Photosynthesis takes place mainly in which part of the leaf?", choices: ["Root", "Stomata", "Chloroplast", "Xylem"], answer: 2, explain: "Chloroplasts contain chlorophyll which captures light for photosynthesis." },
+      { exam: "JAMB", subject: "Mathematics", year: "2024", type: "practice", q: "Solve for x: 3x - 9 = 6", choices: ["3", "5", "15", "0"], answer: 1, explain: "3x = 15, so x = 5." },
+      { exam: "JAMB", subject: "English Language", year: "2024", type: "practice", q: "Which word is the antonym of 'generous'?", choices: ["Kind", "Miserly", "Rich", "Friendly"], answer: 1, explain: "'Miserly' means ungenerous, the opposite of generous." },
+      { exam: "GCE", subject: "Physics", year: "2022", type: "practice", q: "The time period of a wave is 0.5 s. Its frequency is:", choices: ["0.5 Hz", "2 Hz", "1 Hz", "5 Hz"], answer: 1, explain: "Frequency = 1 / period = 1 / 0.5 = 2 Hz." },
+      { exam: "GCE", subject: "Chemistry", year: "2021", type: "practice", q: "The pH of a neutral solution at 25°C is:", choices: ["0", "7", "14", "1"], answer: 1, explain: "Neutral solutions have a pH of 7." }
+    ];
+
+    // Sample leaderboard entries
+    const Leaderboard = [
+      { name: "Ada N.", score: 4820, subject: "Mathematics" },
+      { name: "Chinedu O.", score: 4650, subject: "Physics" },
+      { name: "Fatima B.", score: 4510, subject: "Chemistry" },
+      { name: "Samuel E.", score: 4390, subject: "Biology" },
+      { name: "Zainab K.", score: 4210, subject: "Economics" }
+    ];
+
+    // Achievement badges catalogue
+    const Badges = [
+      { name: "First Steps", desc: "Attempt your first question", earned: true },
+      { name: "Consistency", desc: "3-day study streak", earned: true },
+      { name: "Perfectionist", desc: "Score 100% on a practice test", earned: true },
+      { name: "Time Keeper", desc: "Complete a timed mock", earned: false },
+      { name: "Galaxy Scholar", desc: "Attempt 100 questions", earned: false }
+    ];
+
+    // Render the home page view
+    function renderHome() {
+      // Build the home page HTML string
+      const html = `
+        <!-- Hero section with headline and actions -->
+        <div class="hero">
+          <!-- Motto pill badge -->
+          <span class="pill">Your Examination Journey Starts Here</span>
+          <!-- Main hero headline -->
+          <h1>MORALES ENTERGALACTIC</h1>
+          <!-- Hero description paragraph -->
+          <p>A futuristic learning universe where Nigerian students prepare for WAEC, NECO, JAMB and GCE with past questions, smart study plans, live exam countdowns, revision tools and practice tests.</p>
+          <!-- Hero action buttons -->
+          <div class="hero-actions">
+            <!-- Start studying button -->
+            <button class="btn btn-primary" data-goto="study">Start Studying</button>
+            <!-- Explore past questions button -->
+            <button class="btn btn-cyan" data-goto="past">Explore Past Questions</button>
+            <!-- Create study plan button -->
+            <button class="btn btn-ghost" data-goto="study">Create Study Plan</button>
+          </div>
+        </div>
+
+        <!-- Examination categories section -->
+        <section id="homeCategories">
+          <!-- Section heading -->
+          <h2 class="section-title">Examination Categories</h2>
+          <!-- Section subtitle -->
+          <p class="section-sub">Choose the examination you are preparing for.</p>
+          <!-- Category cards grid -->
+          <div class="grid">
+            <!-- WAEC category card -->
+            <div class="card" data-goto="past" data-exam="WAEC">
+              <span class="pill">National</span>
+              <h3>WAEC</h3>
+              <p>West African Examinations Council. Prepare for senior school and GCE WAEC papers.</p>
+            </div>
+            <!-- NECO category card -->
+            <div class="card" data-goto="past" data-exam="NECO">
+              <span class="pill">National</span>
+              <h3>NECO</h3>
+              <p>Nigerian Examinations Council. Practice NECO past questions and mock tests.</p>
+            </div>
+            <!-- JAMB category card -->
+            <div class="card" data-goto="past" data-exam="JAMB">
+              <span class="pill">University</span>
+              <h3>JAMB / UTME</h3>
+              <p>Joint Admissions Board. Tackle UTME objective questions with explanations.</p>
+            </div>
+            <!-- GCE category card -->
+            <div class="card" data-goto="past" data-exam="GCE">
+              <span class="pill">National</span>
+              <h3>GCE</h3>
+              <p>General Certificate of Education. Build strong revision across GCE subjects.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Live exam countdown section -->
+        <section id="homeCountdown">
+          <!-- Countdown heading -->
+          <h2 class="section-title">Live Examination Countdown</h2>
+          <!-- Countdown subtitle -->
+          <p class="section-sub">Time to the next official examination session.</p>
+          <!-- Countdown selection chips -->
+          <div class="chips" id="cdChips"></div>
+          <!-- Countdown display container -->
+          <div class="grid grid-4" id="cdDisplay" style="margin-top:18px;"></div>
+          <!-- Motivational message below countdown -->
+          <div class="card" id="cdMotivation" style="margin-top:18px;"></div>
+        </section>
+
+        <!-- Popular subjects section -->
+        <section id="homeSubjects">
+          <!-- Subjects heading -->
+          <h2 class="section-title">Popular Subjects</h2>
+          <!-- Subjects subtitle -->
+          <p class="section-sub">Tap a subject to open its library and practice questions.</p>
+          <!-- Subject chips row -->
+          <div class="chips" id="subjectChips"></div>
+        </section>
+
+        <!-- Daily motivational quote section -->
+        <section id="homeQuote">
+          <!-- Quote heading -->
+          <h2 class="section-title">Daily Motivation</h2>
+          <!-- Quote card -->
+          <div class="card announce" style="text-align:center;">
+            <p style="font-size:1.1rem;color:var(--text);font-style:italic;">&#8220;${getDailyQuote()}&#8221;</p>
+          </div>
+        </section>
+
+        <!-- Student progress overview section -->
+        <section id="homeProgress">
+          <!-- Progress heading -->
+          <h2 class="section-title">Your Progress at a Glance</h2>
+          <!-- Progress subtitle -->
+          <p class="section-sub">A quick overview of your learning journey.</p>
+          <!-- Progress stat cards -->
+          <div class="grid grid-4">
+            <!-- Attempted questions stat -->
+            <div class="card"><div class="stat-num" id="statAttempted">${App.stats.attempted}</div><div style="color:var(--muted);font-size:0.8rem;">Questions Attempted</div></div>
+            <!-- Average score stat -->
+            <div class="card"><div class="stat-num" id="statAvg">${avgScore()}%</div><div style="color:var(--muted);font-size:0.8rem;">Average Score</div></div>
+            <!-- Study hours stat -->
+            <div class="card"><div class="stat-num">${App.stats.hours}h</div><div style="color:var(--muted);font-size:0.8rem;">Study Hours</div></div>
+            <!-- Streak stat -->
+            <div class="card"><div class="stat-num">${App.stats.streak} days</div><div style="color:var(--muted);font-size:0.8rem;">Learning Streak</div></div>
+          </div>
+        </section>
+
+        <!-- Daily question of the day section -->
+        <section id="homeQotD">
+          <!-- QotD heading -->
+          <h2 class="section-title">Question of the Day</h2>
+          <!-- QotD container -->
+          <div id="qotdWrap"></div>
+        </section>
+      `;
+      // Set the view inner HTML to the home page
+      document.getElementById("view").innerHTML = html;
+      // Bind home page specific events
+      bindHomeEvents();
+      // Build the countdown exam selection chips
+      buildCdChips();
+      // Build the popular subject chips
+      buildSubjectChips();
+      // Render the question of the day
+      renderQotD();
+      // Start the countdown timer loop
+      startCountdown();
+    }
+
+    // Build the countdown exam selection chips
+    function buildCdChips() {
+      // Get the countdown chips container
+      const wrap = document.getElementById("cdChips");
+      // Create chips for each examination type
+      wrap.innerHTML = Object.keys(Exams).map(e =>
+        `<button class="chip ${e === App.exam ? "selected" : ""}" data-cdexam="${e}">${e}</button>`
+      ).join("");
+      // Attach click handlers to each chip
+      wrap.querySelectorAll("button").forEach(btn => {
+        // On click switch the active exam
+        btn.addEventListener("click", () => {
+          // Update the active exam in state
+          App.exam = btn.dataset.cdexam;
+          // Rebuild chips to reflect selection
+          buildCdChips();
+          // Re-render the countdown display
+          updateCdDisplay();
+        });
+      });
+      // Initially show the countdown for the active exam
+      updateCdDisplay();
+    }
+
+    // Render the countdown day/hour/minute/second display
+    function updateCdDisplay() {
+      // Get the display container
+      const disp = document.getElementById("cdDisplay");
+      // Get the motivation card
+      const mot = document.getElementById("cdMotivation");
+      // Return silently if containers are missing
+      if (!disp || !mot) return;
+      // Compute the time difference to the next official start
+      const diff = getExamDiff();
+      // Format the countdown boxes
+      disp.innerHTML = [
+        ["Days", Math.max(0, Math.floor(diff / 86400000))],
+        ["Hours", Math.max(0, Math.floor(diff / 3600000) % 24)],
+        ["Minutes", Math.max(0, Math.floor(diff / 60000) % 60)],
+        ["Seconds", Math.max(0, Math.floor(diff / 1000) % 60)]
+      ].map(u =>
+        `<div class="count-box"><div class="count-val" data-cd="${u[0].toLowerCase()}">${u[1]}</div><div class="count-label">${u[0]}</div></div>`
+      ).join("");
+      // Set the motivational message depending on time remaining
+      const days = Math.floor(diff / 86400000);
+      // Choose a message based on proximity to the exam
+      const msg = days <= 0
+        ? "Exam day is here or has passed. Stay calm, trust your preparation and give your best!"
+        : days <= 7
+          ? "Final week! Focus on revision summaries, weak topics and timed practice."
+          : "You have time. Stay consistent, one question at a time, and your results will rise.";
+      // Render the exam name and motivational message
+      mot.innerHTML = `<span class="pill">${Exams[App.exam].name}</span><h3 style="margin-top:10px;">${msg}</h3>`;
+    }
+
+    // Calculate the millisecond difference to the next official exam start
+    function getExamDiff() {
+      // Get the start date of the selected exam
+      const start = new Date(Exams[App.exam].start).getTime();
+      // Get the current time
+      const now = Date.now();
+      // If the start has passed, target the end date instead
+      const target = start > now ? start : new Date(Exams[App.exam].end).getTime();
+      // Return the difference in milliseconds
+      return target - now;
+    }
+
+    // Start the recurring countdown update interval
+    function startCountdown() {
+      // Clear any existing interval to avoid duplicates
+      if (App.cdTimer) clearInterval(App.cdTimer);
+      // Update the display immediately
+      updateCdDisplay();
+      // Update every second
+      App.cdTimer = setInterval(updateCdDisplay, 1000);
+    }
+
+    // Build the popular subject chips
+    function buildSubjectChips() {
+      // Get the subject chips container
+      const wrap = document.getElementById("subjectChips");
+      // Render a chip for every subject
+      wrap.innerHTML = Subjects.map(s =>
+        `<button class="chip" data-subject="${s}">${s}</button>`
+      ).join("");
+      // Attach click handlers to each subject chip
+      wrap.querySelectorAll("button").forEach(btn => {
+        // Navigate to subjects page with the chosen subject pre-selected
+        btn.addEventListener("click", () => {
+          // Set the active subject
+          App.subject = btn.dataset.subject;
+          // Navigate to the subjects page
+          navigate("subjects");
+        });
+      });
+    }
+
+    // Render the daily question of the day widget
+    function renderQotD() {
+      // Get the QotD container
+      const wrap = document.getElementById("qotdWrap");
+      // Return silently if the container is missing
+      if (!wrap) return;
+      // Pick a deterministic question based on today's date
+      const dayIndex = new Date().getDate() % QuestionBank.length;
+      // Grab the chosen question
+      const q = QuestionBank[dayIndex];
+      // Build the QotD card HTML
+      wrap.innerHTML = `
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+            <span class="pill">${q.exam} &middot; ${q.subject} &middot; ${q.year}</span>
+            <span class="pill warn">${q.type === "practice" ? "Practice question" : "Verified past question"}</span>
+          </div>
+          <div class="question">
+            <div class="qtext">${q.q}</div>
+            <div id="qotdChoices"></div>
+            <button class="btn btn-cyan btn-sm" style="margin-top:10px;" data-goto="past">Solve More in Past Questions</button>
+          </div>
+        </div>
+      `;
+      // Render the choices for the question of the day
+      document.getElementById("qotdChoices").innerHTML = q.choices.map((c, i) =>
+        `<div class="choice" data-choice="${i}"><strong>${"ABCD"[i]}.</strong> <span>${c}</span></div>`
+      ).join("");
+      // Attach click handlers to the QotD choices
+      document.querySelectorAll("#qotdChoices .choice").forEach(el => {
+        // On selection, reveal the correct answer
+        el.addEventListener("click", () => {
+          // Mark the selected choice
+          if (parseInt(el.dataset.choice, 10) === q.answer) {
+            el.classList.add("correct");
+          } else {
+            el.classList.add("wrong");
+          }
+          // Show the correct choice
+          const correctEl = document.querySelector(`#qotdChoices .choice[data-choice="${q.answer}"]`);
+          if (correctEl) correctEl.classList.add("correct");
+          // Show explanation
+          document.getElementById("qotdChoices").innerHTML +=
+            `<div class="score-box" style="margin-top:10px;"><strong>Explanation:</strong> ${q.explain}</div>`;
+          // Record the attempt in stats
+          App.stats.attempted++;
+          // Show a toast confirmation
+          toast("Question of the day answered. Explanation shown.");
+        });
+      });
+    }
+
+    // Bind events specific to the home page
+    function bindHomeEvents() {
+      // Bind generic data-goto and data-exam handlers
+      document.querySelectorAll("[data-goto]").forEach(el => {
+        // On click, navigate to the target page
+        el.addEventListener("click", (e) => {
+          // Prevent default link behaviour
+          e.preventDefault();
+          // If an exam is specified, set it as active
+          if (el.dataset.exam) App.exam = el.dataset.exam;
+          // Navigate to the requested page
+          navigate(el.dataset.goto);
+        });
+      });
+    }
+
+    // Render the past questions centre view
+    function renderPast() {
+      // Build the past questions page HTML
+      const html = `
+        <!-- Past questions header -->
+        <h2 class="section-title">Past Questions Centre</h2>
+        <p class="section-sub">Search, filter and practice. Practice questions are clearly labelled and are not presented as official past papers.</p>
+
+        <!-- Filter controls card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Search input -->
+          <input type="search" id="pqSearch" placeholder="Search questions..." value="${App.search}" aria-label="Search past questions" />
+          <!-- Filter row -->
+          <div class="grid grid-4" style="margin-top:12px;">
+            <!-- Examination filter select -->
+            <div>
+              <label for="pqExam">Examination</label>
+              <select id="pqExam">${Object.keys(Exams).map(e => `<option ${e === App.exam ? "selected" : ""}>${e}</option>`).join("")}</select>
+            </div>
+            <!-- Subject filter select -->
+            <div>
+              <label for="pqSubject">Subject</label>
+              <select id="pqSubject">${Subjects.map(s => `<option ${s === App.subject ? "selected" : ""}>${s}</option>`).join("")}</select>
+            </div>
+            <!-- Year filter select -->
+            <div>
+              <label for="pqYear">Year</label>
+              <select id="pqYear">${Years.map(y => `<option ${y === App.year ? "selected" : ""}>${y}</option>`).join("")}</select>
+            </div>
+            <!-- Timed mode toggle -->
+            <div>
+              <label for="pqTimed">Timed Mock Mode</label>
+              <select id="pqTimed">
+                <option value="off">Off</option>
+                <option value="on">On</option>
+              </select>
+            </div>
+          </div>
+          <!-- Action buttons row -->
+          <div class="hero-actions" style="justify-content:flex-start;margin-top:14px;">
+            <!-- Apply filters button -->
+            <button class="btn btn-primary btn-sm" id="pqApply">Apply Filters</button>
+            <!-- Start timed mock button -->
+            <button class="btn btn-cyan btn-sm" id="pqStart">Start Timed Mock</button>
+          </div>
+        </div>
+
+        <!-- Timed mock timer display -->
+        <div id="pqTimerWrap" class="card hidden" style="margin-bottom:18px;text-align:center;">
+          <!-- Timer digits -->
+          <div class="timer-display" id="pqTimer">10:00</div>
+          <!-- Timer status text -->
+          <p>Timed mock session. Answer the questions below before the timer runs out.</p>
+          <!-- Submit mock button -->
+          <button class="btn btn-primary" id="pqSubmitMock">Submit Mock</button>
+        </div>
+
+        <!-- Results and score panel -->
+        <div id="pqResults" class="card hidden"></div>
+
+        <!-- Question list container -->
+        <div id="pqList"></div>
+      `;
+      // Set the view inner HTML
+      document.getElementById("view").innerHTML = html;
+      // Bind past questions events
+      bindPastEvents();
+      // Render the filtered question list
+      renderQuestionList();
+    }
+
+    // Bind events for the past questions page
+    function bindPastEvents() {
+      // Search input live filter
+      document.getElementById("pqSearch").addEventListener("input", (e) => {
+        // Update search state
+        App.search = e.target.value;
+        // Re-render the list
+        renderQuestionList();
+      });
+      // Examination select change
+      document.getElementById("pqExam").addEventListener("change", (e) => {
+        // Update active exam
+        App.exam = e.target.value;
+      });
+      // Subject select change
+      document.getElementById("pqSubject").addEventListener("change", (e) => {
+        // Update active subject
+        App.subject = e.target.value;
+      });
+      // Year select change
+      document.getElementById("pqYear").addEventListener("change", (e) => {
+        // Update active year
+        App.year = e.target.value;
+      });
+      // Apply filters button
+      document.getElementById("pqApply").addEventListener("click", () => {
+        // Re-render the filtered list
+        renderQuestionList();
+        // Show a confirmation toast
+        toast("Filters applied. Showing matching questions.");
+      });
+      // Start timed mock button
+      document.getElementById("pqStart").addEventListener("click", startTimedMock);
+      // Submit mock button (hidden until timer starts)
+      document.getElementById("pqSubmitMock").addEventListener("click", submitMock);
+    }
+
+    // Filter and render the current question list
+    function renderQuestionList() {
+      // Get the list container
+      const list = document.getElementById("pqList");
+      // Return silently if the container is missing
+      if (!list) return;
+      // Filter the question bank by current filters
+      let questions = QuestionBank.filter(q =>
+        q.exam === App.exam &&
+        q.subject === App.subject &&
+        q.year === App.year
+      );
+      // If no subject-specific questions, show all subjects for the exam and year
+      if (questions.length === 0) {
+        questions = QuestionBank.filter(q => q.exam === App.exam && q.year === App.year);
+      }
+      // If still empty, show a helpful empty state
+      if (questions.length === 0) {
+        list.innerHTML = `<div class="card"><p>No questions found for <strong>${App.exam} ${App.subject} ${App.year}</strong>. Try clearing a filter or choosing another subject. Authentic past questions are added by admins and clearly labelled.</p></div>`;
+        // Stop here
+        return;
+      }
+      // Render each question card
+      list.innerHTML = questions.map((q, idx) => `
+        <div class="question" data-qid="${idx}" data-answer="${q.answer}">
+          <!-- Question meta pills -->
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+            <span class="pill">${q.exam} &middot; ${q.subject} &middot; ${q.year}</span>
+            <span class="pill ${q.type === "practice" ? "warn" : "ok"}">${q.type === "practice" ? "Practice question" : "Verified past question"}</span>
+            <button class="btn btn-ghost btn-sm" style="margin-left:auto;" data-bookmark="${idx}">Bookmark</button>
+          </div>
+          <!-- Question prompt -->
+          <div class="qtext">${q.q}</div>
+          <!-- Answer choices -->
+          <div class="choices" data-choices>
+            ${q.choices.map((c, i) => `<div class="choice" data-choice="${i}"><strong>${"ABCD"[i]}.</strong> <span>${c}</span></div>`).join("")}
+          </div>
+          <!-- Explanation reveal button -->
+          <button class="btn btn-cyan btn-sm" style="margin-top:10px;" data-reveal="${idx}">Check Answer &amp; Explanation</button>
+          <!-- Explanation container -->
+          <div class="explain hidden" data-explain="${idx}"></div>
+        </div>
+      `).join("");
+      // Attach choice click handlers
+      list.querySelectorAll(".choice").forEach(el => {
+        // On selection, highlight and allow checking
+        el.addEventListener("click", () => {
+          // Get the parent question card
+          const card = el.closest(".question");
+          // Clear previous highlights in this card
+          card.querySelectorAll(".choice").forEach(c => c.classList.remove("correct", "wrong"));
+          // Mark the selected choice
+          el.classList.add("selected-choice");
+        });
+      });
+      // Attach check answer button handlers
+      list.querySelectorAll("[data-reveal]").forEach(btn => {
+        // Reveal the correct answer and explanation
+        btn.addEventListener("click", () => {
+          // Get the card and answer
+          const card = btn.closest(".question");
+          const correctIdx = parseInt(card.dataset.answer, 10);
+          // Highlight the correct choice
+          const correctEl = card.querySelector(`.choice[data-choice="${correctIdx}"]`);
+          if (correctEl) correctEl.classList.add("correct");
+          // Find the question object for the explanation
+          let questions = QuestionBank.filter(q => q.exam === App.exam && q.subject === App.subject && q.year === App.year);
+          if (questions.length === 0) questions = QuestionBank.filter(q => q.exam === App.exam && q.year === App.year);
+          const q = questions[parseInt(btn.dataset.reveal, 10)];
+          // Show the explanation box
+          const box = card.querySelector(`[data-explain="${btn.dataset.reveal}"]`);
+          box.classList.remove("hidden");
+          box.innerHTML = `<div class="score-box"><strong>Explanation:</strong> ${q.explain}</div>`;
+          // Record the attempt in stats
+          App.stats.attempted++;
+          // Persist stats
+          saveData();
+          // Show a toast
+          toast("Answer checked. Explanation revealed.");
+        });
+      });
+      // Attach bookmark button handlers
+      list.querySelectorAll("[data-bookmark]").forEach(btn => {
+        // Toggle bookmark state
+        btn.addEventListener("click", () => {
+          // Build a unique bookmark id
+          const id = btn.dataset.bookmark;
+          // Toggle the bookmark
+          if (App.bookmarks.includes(id)) {
+            App.bookmarks = App.bookmarks.filter(b => b !== id);
+          } else {
+            App.bookmarks.push(id);
+          }
+          // Update button label
+          btn.textContent = App.bookmarks.includes(id) ? "Bookmarked" : "Bookmark";
+          // Persist the change
+          saveData();
+          // Show a toast
+          toast(App.bookmarks.includes(id) ? "Question bookmarked for review." : "Bookmark removed.");
+        });
+      });
+    }
+
+    // Start a timed mock session
+    function startTimedMock() {
+      // Get the timer container and display
+      const wrap = document.getElementById("pqTimerWrap");
+      const disp = document.getElementById("pqTimer");
+      // Show the timer panel
+      wrap.classList.remove("hidden");
+      // Set a 10 minute mock duration in seconds
+      let remaining = 600;
+      // Update the display helper
+      function tick() {
+        // Format as mm:ss
+        const m = Math.floor(remaining / 60).toString().padStart(2, "0");
+        const s = (remaining % 60).toString().padStart(2, "0");
+        disp.textContent = m + ":" + s;
+        // If time is up, auto submit
+        if (remaining <= 0) submitMock();
+        // Decrement
+        remaining--;
+      }
+      // Clear any previous mock timer
+      if (App.pqMockTimer) clearInterval(App.pqMockTimer);
+      // Run the tick once immediately
+      tick();
+      // Run every second
+      App.pqMockTimer = setInterval(tick, 1000);
+      // Show a toast
+      toast("Timed mock started. You have 10 minutes.");
+    }
+
+    // Submit the timed mock and grade answers
+    function submitMock() {
+      // Clear the mock timer
+      if (App.pqMockTimer) clearInterval(App.pqMockTimer);
+      // Get the results container
+      const res = document.getElementById("pqResults");
+      // Get all answered questions
+      const cards = document.querySelectorAll("#pqList .question");
+      // Count correct and total
+      let correct = 0;
+      let total = 0;
+      // Grade each card
+      cards.forEach(card => {
+        // Find the selected choice
+        const selected = card.querySelector(".choice.selected-choice");
+        // Mark selected as answered
+        total++;
+        // Compare to the correct answer
+        if (selected) {
+          const selIdx = selected.dataset.choice;
+          // Highlight correct and incorrect
+          card.querySelectorAll(".choice").forEach(c => c.classList.remove("correct", "wrong"));
+          const correctEl = card.querySelector(`.choice[data-choice="${card.dataset.answer}"]`);
+          if (correctEl) correctEl.classList.add("correct");
+          // Mark the wrong one if incorrect
+          if (selIdx !== card.dataset.answer) selected.classList.add("wrong");
+          // Increment correct if right
+          if (selIdx === card.dataset.answer) correct++;
+        }
+      });
+      // Compute percentage
+      const pct = total ? Math.round((correct / total) * 100) : 0;
+      // Update stats
+      App.stats.attempted += total;
+      App.stats.correct += correct;
+      App.stats.sessions++;
+      // Persist stats
+      saveData();
+      // Render the results panel
+      res.classList.remove("hidden");
+      res.innerHTML = `
+        <h3>Mock Results</h3>
+        <div class="grid grid-3">
+          <div class="card"><div class="stat-num">${correct}/${total}</div><div style="color:var(--muted);font-size:0.8rem;">Correct</div></div>
+          <div class="card"><div class="stat-num">${pct}%</div><div style="color:var(--muted);font-size:0.8rem;">Score</div></div>
+          <div class="card"><div class="stat-num">${pct >= 70 ? "Strong" : "Keep Practising"}</div><div style="color:var(--muted);font-size:0.8rem;">Status</div></div>
+        </div>
+        <p style="margin-top:10px;">Review the highlighted choices above. Correct answers are marked green; your incorrect picks are marked red.</p>
+      `;
+      // Show a toast
+      toast(`Mock submitted. You scored ${pct}%.`);
+      // Scroll to the results panel
+      res.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Render the study room view
+    function renderStudy() {
+      // Build the study room HTML
+      const html = `
+        <!-- Study room header -->
+        <h2 class="section-title">Study Room</h2>
+        <p class="section-sub">Build a personal study plan, track daily goals and use the Pomodoro timer.</p>
+
+        <!-- Pomodoro timer card -->
+        <div class="card" style="margin-bottom:18px;text-align:center;">
+          <!-- Pomodoro title -->
+          <h3>Pomodoro Study Timer</h3>
+          <!-- Timer digits -->
+          <div class="timer-display" id="pomTimer">25:00</div>
+          <!-- Timer controls -->
+          <div class="hero-actions">
+            <!-- Start / pause button -->
+            <button class="btn btn-primary" id="pomToggle">Start</button>
+            <!-- Reset button -->
+            <button class="btn btn-ghost" id="pomReset">Reset</button>
+            <!-- Mode toggle -->
+            <button class="btn btn-cyan" id="pomMode">Break Mode</button>
+          </div>
+        </div>
+
+        <!-- Personal study timetable card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Timetable title -->
+          <h3>Personal Study Timetable</h3>
+          <!-- Timetable input row -->
+          <div class="grid grid-3" style="margin-bottom:10px;">
+            <!-- Subject input -->
+            <div><label for="ttSubject">Subject</label><input type="text" id="ttSubject" placeholder="e.g. Mathematics" /></div>
+            <!-- Day input -->
+            <div><label for="ttDay">Day</label><input type="text" id="ttDay" placeholder="e.g. Monday" /></div>
+            <!-- Time input -->
+            <div><label for="ttTime">Time</label><input type="text" id="ttTime" placeholder="e.g. 4:00 - 5:00 PM" /></div>
+          </div>
+          <!-- Add timetable entry button -->
+          <button class="btn btn-cyan btn-sm" id="ttAdd">Add to Timetable</button>
+          <!-- Timetable list -->
+          <div id="ttList" style="margin-top:14px;"></div>
+        </div>
+
+        <!-- Daily goals and revision checklist card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Goals title -->
+          <h3>Daily Goals &amp; Revision Checklist</h3>
+          <!-- Goal input row -->
+          <div class="grid" style="grid-template-columns:1fr auto;margin-bottom:10px;">
+            <!-- Goal input -->
+            <input type="text" id="goalInput" placeholder="Add a study goal..." />
+            <!-- Add goal button -->
+            <button class="btn btn-primary" id="goalAdd">Add</button>
+          </div>
+          <!-- Goals list -->
+          <div id="goalList"></div>
+        </div>
+
+        <!-- Notes section card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Notes title -->
+          <h3>My Notes</h3>
+          <!-- Notes textarea -->
+          <textarea id="notesInput" rows="3" placeholder="Write quick notes, formulas or reminders..."></textarea>
+          <!-- Save notes button -->
+          <button class="btn btn-cyan btn-sm" style="margin-top:8px;" id="notesSave">Save Note</button>
+          <!-- Notes list -->
+          <div id="notesList" style="margin-top:12px;"></div>
+        </div>
+
+        <!-- Progress tracking card -->
+        <div class="card">
+          <!-- Progress title -->
+          <h3>Progress Tracking</h3>
+          <!-- Streak display -->
+          <div class="grid grid-3">
+            <div><div class="stat-num">${App.stats.streak} days</div><div style="color:var(--muted);font-size:0.8rem;">Streak</div></div>
+            <div><div class="stat-num">${App.stats.sessions}</div><div style="color:var(--muted);font-size:0.8rem;">Sessions</div></div>
+            <div><div class="stat-num">${App.stats.hours}h</div><div style="color:var(--muted);font-size:0.8rem;">Study Hours</div></div>
+          </div>
+          <!-- Overall progress bar -->
+          <div class="progress" style="margin-top:14px;"><span id="progressFill" style="width:${avgScore()}%;"></span></div>
+          <p style="margin-top:6px;font-size:0.8rem;color:var(--muted);">Overall readiness: ${avgScore()}%</p>
+        </div>
+      `;
+      // Set the view inner HTML
+      document.getElementById("view").innerHTML = html;
+      // Bind study room events
+      bindStudyEvents();
+      // Render saved study data
+      renderStudyLists();
+      // Initialize the Pomodoro timer
+      initPomodoro();
+    }
+
+    // Bind events for the study room page
+    function bindStudyEvents() {
+      // Add timetable entry
+      document.getElementById("ttAdd").addEventListener("click", () => {
+        // Read the three inputs
+        const subject = document.getElementById("ttSubject").value.trim();
+        const day = document.getElementById("ttDay").value.trim();
+        const time = document.getElementById("ttTime").value.trim();
+        // Validate all fields
+        if (!subject || !day || !time) {
+          toast("Please fill in subject, day and time.");
+          // Stop here
+          return;
+        }
+        // Load or create the timetable array
+        const data = loadStudyData();
+        // Push the new entry
+        data.timetable.push({ subject, day, time });
+        // Save to storage
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        // Clear the inputs
+        document.getElementById("ttSubject").value = "";
+        document.getElementById("ttDay").value = "";
+        document.getElementById("ttTime").value = "";
+        // Re-render the list
+        renderStudyLists();
+        // Show a toast
+        toast("Timetable entry added.");
+      });
+      // Add a goal
+      document.getElementById("goalAdd").addEventListener("click", addGoal);
+      // Enter key on the goal input adds a goal
+      document.getElementById("goalInput").addEventListener("keydown", (e) => {
+        // On enter, add the goal
+        if (e.key === "Enter") addGoal();
+      });
+      // Save a note
+      document.getElementById("notesSave").addEventListener("click", () => {
+        // Get the note text
+        const text = document.getElementById("notesInput").value.trim();
+        // Validate the note
+        if (!text) {
+          toast("Please write a note first.");
+          // Stop here
+          return;
+        }
+        // Load the study data
+        const data = loadStudyData();
+        // Push the new note
+        data.notes.push({ text, time: new Date().toLocaleDateString() });
+        // Save to storage
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        // Clear the textarea
+        document.getElementById("notesInput").value = "";
+        // Re-render the list
+        renderStudyLists();
+        // Show a toast
+        toast("Note saved for offline reference.");
+      });
+    }
+
+    // Add a daily goal to the checklist
+    function addGoal() {
+      // Get the goal text
+      const text = document.getElementById("goalInput").value.trim();
+      // Validate the goal
+      if (!text) return;
+      // Load the study data
+      const data = loadStudyData();
+      // Push the new goal
+      data.goals.push({ text, done: false });
+      // Save to storage
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      // Clear the input
+      document.getElementById("goalInput").value = "";
+      // Re-render the list
+      renderStudyLists();
+      // Show a toast
+      toast("Goal added to your daily checklist.");
+    }
+
+    // Render all study room lists from saved data
+    function renderStudyLists() {
+      // Load the persisted study data
+      const data = loadStudyData();
+      // Render the timetable list
+      const tt = document.getElementById("ttList");
+      if (tt) {
+        // Show entries or an empty message
+        tt.innerHTML = data.timetable.length
+          ? data.timetable.map((t, i) =>
+              `<div class="note-item" style="display:flex;justify-content:space-between;">
+                 <span><strong>${t.day}</strong> &middot; ${t.subject} &middot; ${t.time}</span>
+                 <button class="btn btn-ghost btn-sm" data-ttdel="${i}">Remove</button>
+               </div>`
+            ).join("")
+          : "<p>No timetable entries yet. Add your first study slot above.</p>";
+        // Attach delete handlers
+        tt.querySelectorAll("[data-ttdel]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            // Remove the entry
+            data.timetable.splice(parseInt(btn.dataset.ttdel, 10), 1);
+            // Save and re-render
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            renderStudyLists();
+            toast("Timetable entry removed.");
+          });
+        });
+      }
+      // Render the goals list
+      const goals = document.getElementById("goalList");
+      if (goals) {
+        // Show goals or an empty message
+        goals.innerHTML = data.goals.length
+          ? data.goals.map((g, i) =>
+              `<div class="note-item" style="display:flex;justify-content:space-between;align-items:center;">
+                 <span style="${g.done ? "text-decoration:line-through;color:var(--faint);" : ""}"><input type="checkbox" ${g.done ? "checked" : ""} data-goalcheck="${i}" style="margin-right:8px;" /> ${g.text}</span>
+                 <button class="btn btn-ghost btn-sm" data-goaldel="${i}">Remove</button>
+               </div>`
+            ).join("")
+          : "<p>No goals yet. Add a daily study goal above.</p>";
+        // Attach goal completion toggles
+        goals.querySelectorAll("[data-goalcheck]").forEach(cb => {
+          cb.addEventListener("change", () => {
+            // Toggle the goal state
+            data.goals[parseInt(cb.dataset.goalcheck, 10)].done = cb.checked;
+            // Save
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            renderStudyLists();
+          });
+        });
+        // Attach goal delete handlers
+        goals.querySelectorAll("[data-goaldel]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            // Remove the goal
+            data.goals.splice(parseInt(btn.dataset.goaldel, 10), 1);
+            // Save and re-render
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            renderStudyLists();
+            toast("Goal removed.");
+          });
+        });
+      }
+      // Render the notes list
+      const notes = document.getElementById("notesList");
+      if (notes) {
+        // Show notes or an empty message
+        notes.innerHTML = data.notes.length
+          ? data.notes.map((n, i) =>
+              `<div class="note-item" style="display:flex;justify-content:space-between;">
+                 <span><small style="color:var(--faint);">${n.time}</small><br>${n.text}</span>
+                 <button class="btn btn-ghost btn-sm" data-notedel="${i}">Delete</button>
+               </div>`
+            ).join("")
+          : "<p>No notes saved yet. Notes are stored locally so you can review them offline.</p>";
+        // Attach note delete handlers
+        notes.querySelectorAll("[data-notedel]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            // Remove the note
+            data.notes.splice(parseInt(btn.dataset.notedel, 10), 1);
+            // Save and re-render
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            renderStudyLists();
+            toast("Note deleted.");
+          });
+        });
+      }
+    }
+
+    // Initialize the Pomodoro study timer
+    function initPomodoro() {
+      // Get the timer display and buttons
+      const disp = document.getElementById("pomTimer");
+      const toggle = document.getElementById("pomToggle");
+      const reset = document.getElementById("pomReset");
+      const mode = document.getElementById("pomMode");
+      // Default focus duration in seconds
+      let focus = 25 * 60;
+      // Break duration
+      let breakTime = 5 * 60;
+      // Current mode
+      let isFocus = true;
+      // Remaining seconds
+      let remaining = focus;
+      // Timer interval id
+      let interval = null;
+      // Rendering function for the display
+      function render() {
+        // Format as mm:ss
+        const m = Math.floor(remaining / 60).toString().padStart(2, "0");
+        const s = (remaining % 60).toString().padStart(2, "0");
+        disp.textContent = m + ":" + s;
+      }
+      // Start / pause the timer
+      toggle.addEventListener("click", () => {
+        // If already running, pause
+        if (interval) {
+          clearInterval(interval);
+          interval = null;
+          toggle.textContent = "Start";
+          // Stop here
+          return;
+        }
+        // Start counting down
+        interval = setInterval(() => {
+          // Decrement
+          remaining--;
+          // Render the display
+          render();
+          // When zero, auto switch mode
+          if (remaining <= 0) {
+            // Clear the interval
+            clearInterval(interval);
+            interval = null;
+            toggle.textContent = "Start";
+            // Switch mode automatically
+            switchMode();
+          }
+        }, 1000);
+        // Update the button label
+        toggle.textContent = "Pause";
+        // Show a toast
+        toast(isFocus ? "Focus session started. Stay on task!" : "Break started. Rest well.");
+      });
+      // Reset the timer
+      reset.addEventListener("click", () => {
+        // Clear any running interval
+        if (interval) clearInterval(interval);
+        interval = null;
+        toggle.textContent = "Start";
+        // Reset remaining to the current mode duration
+        remaining = isFocus ? focus : breakTime;
+        // Render
+        render();
+        toast("Timer reset.");
+      });
+      // Switch between focus and break modes
+      function switchMode() {
+        // Flip the mode
+        isFocus = !isFocus;
+        // Set the remaining to the new mode
+        remaining = isFocus ? focus : breakTime;
+        // Update the mode button label
+        mode.textContent = isFocus ? "Break Mode" : "Focus Mode";
+        // Render
+        render();
+      }
+      // Toggle the mode button
+      mode.addEventListener("click", () => {
+        // Switch the mode
+        switchMode();
+      });
+      // Initial render
+      render();
+    }
+
+    // Render the subjects library view
+    function renderSubjects() {
+      // Build the subjects page HTML
+      const html = `
+        <!-- Subjects header -->
+        <h2 class="section-title">Subject Library</h2>
+        <p class="section-sub">Simplified notes, key definitions, formulas and worked examples explained for secondary school students.</p>
+
+        <!-- Subject selection chips -->
+        <div class="chips" id="subChips" style="margin-bottom:18px;"></div>
+
+        <!-- Selected subject content card -->
+        <div class="card" id="subContent"></div>
+      `;
+      // Set the view inner HTML
+      document.getElementById("view").innerHTML = html;
+      // Build the subject chips
+      const chips = document.getElementById("subChips");
+      // Render a chip for each subject
+      chips.innerHTML = Subjects.map(s =>
+        `<button class="chip ${s === App.subject ? "selected" : ""}" data-sub="${s}">${s}</button>`
+      ).join("");
+      // Attach chip click handlers
+      chips.querySelectorAll("button").forEach(btn => {
+        // On click, select the subject and render
+        btn.addEventListener("click", () => {
+          // Update active subject
+          App.subject = btn.dataset.sub;
+          // Re-render chips and content
+          renderSubjects();
+        });
+      });
+      // Render the selected subject content
+      renderSubjectContent();
+    }
+
+    // Render the content for the currently selected subject
+    function renderSubjectContent() {
+      // Get the content container
+      const el = document.getElementById("subContent");
+      // Return silently if missing
+      if (!el) return;
+      // Get the subject library entry (fallback to a generic entry)
+      const s = SubjectLibrary[App.subject] || { notes: "Notes for " + App.subject + " coming soon.", topics: [], definitions: [], formulas: ["None"], examples: [], summary: "Keep revising." };
+      // Build the content HTML
+      el.innerHTML = `
+        <h3 style="margin-top:0;">${App.subject}</h3>
+        <p>${s.notes}</p>
+        <div class="grid" style="margin-top:14px;">
+          <!-- Important topics -->
+          <div>
+            <h4>Important Topics</h4>
+            <ul>${s.topics.map(t => `<li>${t}</li>`).join("")}</ul>
+          </div>
+          <!-- Key definitions -->
+          <div>
+            <h4>Key Definitions</h4>
+            <ul>${s.definitions.map(d => `<li>${d}</li>`).join("")}</ul>
+          </div>
+          <!-- Important formulas -->
+          <div>
+            <h4>Important Formulas</h4>
+            <ul>${s.formulas.map(f => `<li>${f}</li>`).join("")}</ul>
+          </div>
+          <!-- Worked examples -->
+          <div>
+            <h4>Worked Examples</h4>
+            <ul>${s.examples.map(x => `<li>${x}</li>`).join("")}</ul>
+          </div>
+        </div>
+        <!-- Revision summary -->
+        <div class="score-box" style="margin-top:14px;"><strong>Revision Summary:</strong> ${s.summary}</div>
+        <!-- Practice and past questions link -->
+        <div class="hero-actions" style="margin-top:14px;">
+          <!-- Practice button -->
+          <button class="btn btn-primary btn-sm" data-goto="past">Practice Questions</button>
+          <!-- Past questions button -->
+          <button class="btn btn-cyan btn-sm" data-goto="past">View Past Questions</button>
+        </div>
+      `;
+      // Bind the internal data-goto buttons
+      el.querySelectorAll("[data-goto]").forEach(b => {
+        // Navigate to the target page
+        b.addEventListener("click", (e) => {
+          e.preventDefault();
+          navigate(b.dataset.goto);
+        });
+      });
+    }
+
+    // Render the exam countdown management view
+    function renderCountdown() {
+      // Build the countdown page HTML
+      const html = `
+        <!-- Countdown header -->
+        <h2 class="section-title">Examination Countdown</h2>
+        <p class="section-sub">Track official exam dates, create personal countdowns and get reminders as your exam approaches.</p>
+
+        <!-- Official exam dates card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Official dates title -->
+          <h3>Official Examination Dates</h3>
+          <!-- Official dates table -->
+          <table>
+            <!-- Table header row -->
+            <thead><tr><th>Examination</th><th>Start Date</th><th>End Date</th></tr></thead>
+            <!-- Table body rows -->
+            <tbody>
+              ${Object.entries(Exams).map(([k, v]) =>
+                `<tr><td><strong>${k}</strong> — ${v.name}</td><td>${v.start}</td><td>${v.end}</td></tr>`
+              ).join("")}
+            </tbody>
+          </table>
+          <p style="margin-top:10px;font-size:0.8rem;color:var(--faint);">These dates can be updated by administrators when official schedules are released.</p>
+        </div>
+
+        <!-- Create personal countdown card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Create countdown title -->
+          <h3>Create a Personal Countdown</h3>
+          <!-- Countdown form row -->
+          <div class="grid" style="grid-template-columns:1fr auto;">
+            <!-- Exam name input -->
+            <input type="text" id="cdName" placeholder="Exam name (e.g. WAEC Biology)" />
+            <!-- Exam date input -->
+            <input type="date" id="cdDate" />
+          </div>
+          <!-- Create countdown button -->
+          <button class="btn btn-primary" style="margin-top:10px;" id="cdCreate">Create Countdown</button>
+        </div>
+
+        <!-- Saved personal countdowns card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Saved countdowns title -->
+          <h3>Your Countdowns</h3>
+          <!-- Countdowns list -->
+          <div id="cdList"></div>
+        </div>
+
+        <!-- Reminders card -->
+        <div class="card">
+          <!-- Reminders title -->
+          <h3>Exam Reminders</h3>
+          <!-- Reminders text -->
+          <p>We show a motivational reminder on this page as your exam date approaches. Enable browser notifications where supported to be reminded.</p>
+          <!-- Enable reminders button -->
+          <button class="btn btn-cyan btn-sm" id="cdEnable">Enable Reminders</button>
+          <!-- Reminder status -->
+          <div id="cdReminderStatus" style="margin-top:8px;font-size:0.8rem;color:var(--muted);"></div>
+        </div>
+      `;
+      // Set the view inner HTML
+      document.getElementById("view").innerHTML = html;
+      // Bind countdown events
+      bindCountdownEvents();
+      // Render saved countdowns
+      renderCountdowns();
+      // Show the reminder permission status
+      showReminderStatus();
+    }
+
+    // Bind events for the countdown page
+    function bindCountdownEvents() {
+      // Create a personal countdown
+      document.getElementById("cdCreate").addEventListener("click", () => {
+        // Read the inputs
+        const name = document.getElementById("cdName").value.trim();
+        const date = document.getElementById("cdDate").value;
+        // Validate the inputs
+        if (!name || !date) {
+          toast("Please enter an exam name and a date.");
+          // Stop here
+          return;
+        }
+        // Load the study data
+        const data = loadStudyData();
+        // Push the new countdown
+        data.countdowns.push({ name, date });
+        // Save to storage
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        // Clear the inputs
+        document.getElementById("cdName").value = "";
+        document.getElementById("cdDate").value = "";
+        // Re-render the list
+        renderCountdowns();
+        // Show a toast
+        toast("Countdown created. We will remind you as it approaches.");
+      });
+      // Enable reminders button
+      document.getElementById("cdEnable").addEventListener("click", () => {
+        // Request notification permission if supported
+        if ("Notification" in window) {
+          Notification.requestPermission().then((perm) => {
+            // Update the status
+            showReminderStatus();
+            // Show a toast
+            toast(perm === "granted" ? "Reminders enabled." : "Reminders not allowed by browser.");
+          });
+        } else {
+          // Fallback message
+          showReminderStatus();
+          toast("Notifications are not supported on this device.");
+        }
+      });
+    }
+
+    // Show the current reminder permission status
+    function showReminderStatus() {
+      // Get the status element
+      const el = document.getElementById("cdReminderStatus");
+      // Return silently if missing
+      if (!el) return;
+      // Check the notification state
+      if ("Notification" in window) {
+        // Show the current permission
+        el.textContent = "Notification status: " + Notification.permission;
+      } else {
+        // Show unsupported message
+        el.textContent = "Notifications are not supported in this browser.";
+      }
+    }
+
+    // Render the list of saved personal countdowns
+    function renderCountdowns() {
+      // Get the list container
+      const list = document.getElementById("cdList");
+      // Return silently if missing
+      if (!list) return;
+      // Load the study data
+      const data = loadStudyData();
+      // Render the countdowns or an empty message
+      list.innerHTML = data.countdowns.length
+        ? data.countdowns.map((c, i) => {
+            // Compute days remaining
+            const diff = new Date(c.date) - new Date();
+            const days = Math.ceil(diff / 86400000);
+            // Choose a motivational message
+            const msg = days <= 0 ? "Exam day! Stay calm and trust your preparation."
+              : days <= 7 ? "Final week. Focus on weak topics and timed practice."
+              : "Stay consistent. Your exam is " + days + " days away.";
+            // Return the countdown item HTML
+            return `<div class="note-item" style="display:flex;justify-content:space-between;align-items:center;">
+                     <div>
+                       <strong>${c.name}</strong> &middot; ${c.date}<br>
+                       <small style="color:var(--muted);">${days > 0 ? days + " days remaining." : "In progress."} ${msg}</small>
+                     </div>
+                     <button class="btn btn-ghost btn-sm" data-cddel="${i}">Remove</button>
+                   </div>`;
+          }).join("")
+        : "<p>No personal countdowns yet. Create one above to track your exam day.</p>";
+      // Attach delete handlers
+      list.querySelectorAll("[data-cddel]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          // Remove the countdown
+          data.countdowns.splice(parseInt(btn.dataset.cddel, 10), 1);
+          // Save and re-render
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+          renderCountdowns();
+          toast("Countdown removed.");
+        });
+      });
+    }
+
+    // Render the student dashboard view
+    function renderDashboard() {
+      // Build the dashboard HTML
+      const html = `
+        <!-- Dashboard header -->
+        <h2 class="section-title">Student Dashboard</h2>
+        <p class="section-sub">Your personalised learning overview. ${App.user ? "Signed in as " + App.user.name : "Exploring in guest mode — sign in to save your progress."}</p>
+
+        <!-- Quick stats grid -->
+        <div class="grid grid-4" style="margin-bottom:18px;">
+          <!-- Questions attempted stat -->
+          <div class="card"><div class="stat-num" id="dashAttempted">${App.stats.attempted}</div><div style="color:var(--muted);font-size:0.8rem;">Questions Attempted</div></div>
+          <!-- Average score stat -->
+          <div class="card"><div class="stat-num">${avgScore()}%</div><div style="color:var(--muted);font-size:0.8rem;">Average Score</div></div>
+          <!-- Study hours stat -->
+          <div class="card"><div class="stat-num">${App.stats.hours}h</div><div style="color:var(--muted);font-size:0.8rem;">Study Hours</div></div>
+          <!-- Streak stat -->
+          <div class="card"><div class="stat-num">${App.stats.streak} days</div><div style="color:var(--muted);font-size:0.8rem;">Learning Streak</div></div>
+        </div>
+
+        <!-- Strongest and weakest subjects -->
+        <div class="grid" style="margin-bottom:18px;">
+          <!-- Strongest subject card -->
+          <div class="card">
+            <h3>Strongest Subject</h3>
+            <p id="dashStrong">Not enough data yet. Keep practising to reveal your strengths.</p>
+            <div class="progress"><span id="strongFill" style="width:0%;"></span></div>
+          </div>
+          <!-- Weakest subject card -->
+          <div class="card">
+            <h3>Weakest Subject</h3>
+            <p id="dashWeak">Not enough data yet. Keep practising to reveal your weaknesses.</p>
+            <div class="progress"><span id="weakFill" style="width:0%;"></span></div>
+          </div>
+        </div>
+
+        <!-- Upcoming examinations and countdown timers -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Upcoming exams title -->
+          <h3>Upcoming Examinations</h3>
+          <!-- Exams list -->
+          <div id="dashExams"></div>
+        </div>
+
+        <!-- Recent activities -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Recent activity title -->
+          <h3>Recent Activity</h3>
+          <!-- Activity list -->
+          <div id="dashActivity"></div>
+        </div>
+
+        <!-- Leaderboard preview -->
+        <div class="card">
+          <!-- Leaderboard title -->
+          <h3>Leaderboard Preview</h3>
+          <!-- Leaderboard rows -->
+          <div id="dashLeaderboard"></div>
+        </div>
+      `;
+      // Set the view inner HTML
+      document.getElementById("view").innerHTML = html;
+      // Compute and display strongest and weakest subjects
+      computeSubjectMastery();
+      // Render upcoming exams
+      renderDashExams();
+      // Render recent activities
+      renderDashActivity();
+      // Render the leaderboard preview
+      renderLeaderboard(document.getElementById("dashLeaderboard"));
+    }
+
+    // Compute the strongest and weakest subject from saved data
+    function computeSubjectMastery() {
+      // Get the elements
+      const strongEl = document.getElementById("dashStrong");
+      const weakEl = document.getElementById("dashWeak");
+      const strongFill = document.getElementById("strongFill");
+      const weakFill = document.getElementById("weakFill");
+      // Return silently if missing
+      if (!strongEl) return;
+      // Load the study data
+      const data = loadStudyData();
+      // If no mastery data, keep default messages
+      if (!data.mastery || data.mastery.length === 0) return;
+      // Find the max and min mastery
+      const max = data.mastery.reduce((a, b) => a.score > b.score ? a : b);
+      const min = data.mastery.reduce((a, b) => a.score < b.score ? a : b);
+      // Display the strongest subject
+      strongEl.textContent = max.subject + " (" + Math.round(max.score * 100) + "% mastery)";
+      strongFill.style.width = Math.round(max.score * 100) + "%";
+      // Display the weakest subject
+      weakEl.textContent = min.subject + " (" + Math.round(min.score * 100) + "% mastery)";
+      weakFill.style.width = Math.round(min.score * 100) + "%";
+    }
+
+    // Render upcoming examinations on the dashboard
+    function renderDashExams() {
+      // Get the container
+      const el = document.getElementById("dashExams");
+      // Return silently if missing
+      if (!el) return;
+      // Build the exams list with days remaining
+      el.innerHTML = Object.entries(Exams).map(([k, v]) => {
+        // Compute days to the start
+        const days = Math.ceil((new Date(v.start) - new Date()) / 86400000);
+        // Return the row HTML
+        return `<div class="rank-row">
+                  <span><strong>${k}</strong> — ${v.name}</span>
+                  <span class="pill ${days > 0 ? "" : "warn"}">${days > 0 ? days + " days away" : "In progress"}</span>
+                </div>`;
+      }).join("");
+    }
+
+    // Render recent activity on the dashboard
+    function renderDashActivity() {
+      // Get the container
+      const el = document.getElementById("dashActivity");
+      // Return silently if missing
+      if (!el) return;
+      // Load the study data
+      const data = loadStudyData();
+      // Render activity or an empty message
+      el.innerHTML = data.activity.length
+        ? data.activity.slice(-5).reverse().map(a => `<div class="note-item">${a}</div>`).join("")
+        : "<p>No recent activity recorded. Start practising questions to build your history.</p>";
+    }
+
+    // Render a leaderboard into a given container
+    function renderLeaderboard(container) {
+      // Return silently if the container is missing
+      if (!container) return;
+      // Render the ranked rows
+      container.innerHTML = Leaderboard.map((row, i) =>
+        `<div class="rank-row">
+           <span><span class="rank-num">#${i + 1}</span> ${row.name} — ${row.subject}</span>
+           <span><strong>${row.score}</strong> pts</span>
+         </div>`
+      ).join("");
+    }
+
+    // Render the about us view
+    function renderAbout() {
+      // Build the about page HTML
+      const html = `
+        <!-- About header -->
+        <h2 class="section-title">About MORALES ENTERGALACTIC</h2>
+        <p class="section-sub">Reaching to the skies in your mind.</p>
+
+        <!-- Mission card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Mission title -->
+          <h3>Our Mission</h3>
+          <p>MORALES ENTERGALACTIC is a futuristic educational universe built for Nigerian secondary school students and examination candidates. Our mission is to make preparation for WAEC, NECO, JAMB and GCE accessible, motivating and effective — even on a basic phone with a slow connection.</p>
+        </div>
+
+        <!-- What we offer grid -->
+        <div class="grid grid-3" style="margin-bottom:18px;">
+          <!-- Past questions card -->
+          <div class="card">
+            <span class="pill">Learning</span>
+            <h3>Past Questions &amp; Practice</h3>
+            <p>Searchable question libraries with answers and explanations. Practice questions are clearly labelled so you never mistake them for official papers.</p>
+          </div>
+          <!-- Study tools card -->
+          <div class="card">
+            <span class="pill">Productivity</span>
+            <h3>Study Tools</h3>
+            <p>Personal timetables, Pomodoro timer, daily goals, revision checklists and notes that sync to your device for offline review.</p>
+          </div>
+          <!-- Motivation card -->
+          <div class="card">
+            <span class="pill">Motivation</span>
+            <h3>Countdowns &amp; Motivation</h3>
+            <p>Live exam countdowns, reminders, streaks, badges and leaderboards keep you inspired and on track.</p>
+          </div>
+        </div>
+
+        <!-- Content disclaimer card -->
+        <div class="card announce" style="margin-bottom:18px;">
+          <!-- Disclaimer title -->
+          <h3>Content Notice</h3>
+          <p>Questions marked as <strong>practice questions</strong> are generated for learning and are not official examination papers. Officially verified past questions are added by administrators from properly sourced and licensed material and are clearly labelled.</p>
+        </div>
+
+        <!-- Installable PWA note -->
+        <div class="card">
+          <!-- PWA title -->
+          <h3>Installable App</h3>
+          <p>This platform is designed to be a Progressive Web App. On supported phones you can add MORALES ENTERGALACTIC to your home screen to launch it like an app — no app store needed.</p>
+        </div>
+      `;
+      // Set the view inner HTML
+      document.getElementById("view").innerHTML = html;
+    }
+
+    // Render the admin dashboard view
+    function renderAdmin() {
+      // If not an admin, show a restricted message
+      if (!App.admin) {
+        // Build the restricted HTML
+        const html = `
+          <!-- Admin restricted header -->
+          <h2 class="section-title">Administrator Access</h2>
+          <p class="section-sub">This area is restricted to authorised administrators.</p>
+          <!-- Login card -->
+          <div class="card">
+            <!-- Admin login title -->
+            <h3>Admin Sign In</h3>
+            <!-- Username input -->
+            <input type="text" id="adminUser" placeholder="Admin username" />
+            <!-- Password input -->
+            <input type="password" id="adminPass" placeholder="Admin password" />
+            <!-- Sign in button -->
+            <button class="btn btn-primary" style="margin-top:10px;" id="adminLogin">Sign In as Admin</button>
+            <p style="margin-top:8px;font-size:0.75rem;color:var(--faint);">Demo credentials: username <strong>admin</strong> / password <strong>moraless</strong></p>
+          </div>
+        `;
+        // Set the view inner HTML
+        document.getElementById("view").innerHTML = html;
+        // Bind the admin login button
+        document.getElementById("adminLogin").addEventListener("click", () => {
+          // Read the credentials
+          const user = document.getElementById("adminUser").value.trim();
+          const pass = document.getElementById("adminPass").value;
+          // Validate the demo credentials
+          if (user === "admin" && pass === "moraless") {
+            // Set the admin flag
+            App.admin = true;
+            // Re-render the admin dashboard
+            renderAdmin();
+            // Show a toast
+            toast("Welcome, administrator.");
+          } else {
+            // Show an error
+            toast("Invalid admin credentials.");
+          }
+        });
+        // Stop here
+        return;
+      }
+      // Build the admin dashboard HTML
+      const html = `
+        <!-- Admin header -->
+        <h2 class="section-title">Admin Dashboard</h2>
+        <p class="section-sub">Manage content, dates, students and announcements.</p>
+
+        <!-- Platform statistics card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Statistics title -->
+          <h3>Platform Statistics</h3>
+          <!-- Stats grid -->
+          <div class="grid grid-4">
+            <div class="stat-num">${QuestionBank.length}</div>
+            <div style="color:var(--muted);font-size:0.8rem;">Questions</div>
+            <div class="stat-num">${Subjects.length}</div>
+            <div style="color:var(--muted);font-size:0.8rem;">Subjects</div>
+            <div class="stat-num">${Years.length}</div>
+            <div style="color:var(--muted);font-size:0.8rem;">Exam Years</div>
+            <div class="stat-num">1240</div>
+            <div style="color:var(--muted);font-size:0.8rem;">Students</div>
+          </div>
+        </div>
+
+        <!-- Upload past question card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Upload title -->
+          <h3>Add a Question</h3>
+          <!-- Question form -->
+          <div class="grid" style="grid-template-columns:1fr auto;">
+            <!-- Exam select -->
+            <div><label>Examination</label><select id="newExam">${Object.keys(Exams).map(e => `<option>${e}</option>`).join("")}</select></div>
+            <!-- Subject select -->
+            <div><label>Subject</label><select id="newSubject">${Subjects.map(s => `<option>${s}</option>`).join("")}</select></div>
+          </div>
+          <!-- Year input -->
+          <div class="grid" style="grid-template-columns:1fr auto;margin-top:10px;">
+            <!-- Year select -->
+            <div><label>Year</label><select id="newYear">${Years.map(y => `<option>${y}</option>`).join("")}</select></div>
+            <!-- Source type select -->
+            <div><label>Source</label><select id="newType"><option value="verified">Verified past question</option><option value="practice">Practice question</option></select></div>
+          </div>
+          <!-- Question text -->
+          <div style="margin-top:10px;"><label>Question</label><textarea id="newQ" rows="2" placeholder="Type the question..."></textarea></div>
+          <!-- Choices input -->
+          <div style="margin-top:8px;"><label>Choices (separate with | )</label><input type="text" id="newChoices" placeholder="Option A|Option B|Option C|Option D" /></div>
+          <!-- Correct answer index -->
+          <div style="margin-top:8px;"><label>Correct answer index (0-3)</label><input type="number" id="newAnswer" min="0" max="3" value="0" /></div>
+          <!-- Explanation input -->
+          <div style="margin-top:8px;"><label>Explanation</label><input type="text" id="newExplain" placeholder="Short explanation..." /></div>
+          <!-- Add question button -->
+          <button class="btn btn-primary" style="margin-top:10px;" id="newAdd">Add Question</button>
+        </div>
+
+        <!-- Edit examination dates card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Edit dates title -->
+          <h3>Edit Examination Dates</h3>
+          <!-- Exam select -->
+          <div style="margin-bottom:10px;"><label>Examination</label><select id="dateExam">${Object.keys(Exams).map(e => `<option>${e}</option>`).join("")}</select></div>
+          <!-- Date inputs -->
+          <div class="grid" style="grid-template-columns:1fr auto;">
+            <!-- Start date -->
+            <div><label>Start</label><input type="date" id="dateStart" /></div>
+            <!-- End date -->
+            <div><label>End</label><input type="date" id="dateEnd" /></div>
+          </div>
+          <!-- Save dates button -->
+          <button class="btn btn-cyan" style="margin-top:10px;" id="dateSave">Save Dates</button>
+        </div>
+
+        <!-- Publish announcement card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Announcement title -->
+          <h3>Publish an Announcement</h3>
+          <!-- Announcement input -->
+          <textarea id="announceInput" rows="2" placeholder="Write an announcement for students..."></textarea>
+          <!-- Publish button -->
+          <button class="btn btn-primary" style="margin-top:8px;" id="announceSave">Publish</button>
+          <!-- Announcements list -->
+          <div id="announceList" style="margin-top:12px;"></div>
+        </div>
+
+        <!-- Manage students card -->
+        <div class="card">
+          <!-- Manage students title -->
+          <h3>Manage Student Accounts</h3>
+          <!-- Students list -->
+          <div id="adminStudents"></div>
+          <!-- Log out button -->
+          <button class="btn btn-ghost" style="margin-top:12px;" id="adminLogout">Log Out of Admin</button>
+        </div>
+      `;
+      // Set the view inner HTML
+      document.getElementById("view").innerHTML = html;
+      // Bind admin events
+      bindAdminEvents();
+      // Render saved announcements
+      renderAnnouncements();
+      // Render the student accounts list
+      renderAdminStudents();
+    }
+
+    // Bind events for the admin dashboard
+    function bindAdminEvents() {
+      // Add a question button
+      document.getElementById("newAdd").addEventListener("click", () => {
+        // Read all the inputs
+        const exam = document.getElementById("newExam").value;
+        const subject = document.getElementById("newSubject").value;
+        const year = document.getElementById("newYear").value;
+        const type = document.getElementById("newType").value;
+        const q = document.getElementById("newQ").value.trim();
+        const choices = document.getElementById("newChoices").value.split("|").map(s => s.trim());
+        const answer = parseInt(document.getElementById("newAnswer").value, 10);
+        const explain = document.getElementById("newExplain").value.trim();
+        // Validate the question
+        if (!q || choices.length < 2) {
+          toast("Please provide a question and at least two choices.");
+          // Stop here
+          return;
+        }
+        // Push the new question into the bank
+        QuestionBank.push({ exam, subject, year, type, q, choices, answer, explain });
+        // Show a toast
+        toast("Question added to the library.");
+        // Re-render the admin page to refresh stats
+        renderAdmin();
+      });
+      // Save examination dates button
+      document.getElementById("dateSave").addEventListener("click", () => {
+        // Read the selected exam and dates
+        const exam = document.getElementById("dateExam").value;
+        const start = document.getElementById("dateStart").value;
+        const end = document.getElementById("dateEnd").value;
+        // Validate the dates
+        if (!start || !end) {
+          toast("Please provide both start and end dates.");
+          // Stop here
+          return;
+        }
+        // Update the exam dates
+        Exams[exam].start = start;
+        Exams[exam].end = end;
+        // Show a toast
+        toast(exam + " dates updated.");
+      });
+      // Publish announcement button
+      document.getElementById("announceSave").addEventListener("click", () => {
+        // Read the announcement text
+        const text = document.getElementById("announceInput").value.trim();
+        // Validate the announcement
+        if (!text) {
+          toast("Please write an announcement first.");
+          // Stop here
+          return;
+        }
+        // Load the study data
+        const data = loadStudyData();
+        // Push the announcement
+        data.announcements.push({ text, time: new Date().toLocaleDateString() });
+        // Save to storage
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        // Clear the input
+        document.getElementById("announceInput").value = "";
+        // Re-render announcements
+        renderAnnouncements();
+        // Show a toast
+        toast("Announcement published.");
+      });
+      // Log out of admin
+      document.getElementById("adminLogout").addEventListener("click", () => {
+        // Clear the admin flag
+        App.admin = false;
+        // Re-render the restricted view
+        renderAdmin();
+        // Show a toast
+        toast("Logged out of admin.");
+      });
+    }
+
+    // Render published announcements
+    function renderAnnouncements() {
+      // Get the container
+      const el = document.getElementById("announceList");
+      // Return silently if missing
+      if (!el) return;
+      // Load the study data
+      const data = loadStudyData();
+      // Render announcements or an empty message
+      el.innerHTML = data.announcements.length
+        ? data.announcements.map((a, i) =>
+            `<div class="note-item" style="display:flex;justify-content:space-between;">
+               <span><small style="color:var(--faint);">${a.time}</small><br>${a.text}</span>
+               <button class="btn btn-ghost btn-sm" data-annadel="${i}">Delete</button>
+             </div>`
+          ).join("")
+        : "<p>No announcements published yet.</p>";
+      // Attach delete handlers
+      el.querySelectorAll("[data-annadel]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          // Remove the announcement
+          data.announcements.splice(parseInt(btn.dataset.annadel, 10), 1);
+          // Save and re-render
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+          renderAnnouncements();
+          toast("Announcement removed.");
+        });
+      });
+    }
+
+    // Render the student accounts list for admin
+    function renderAdminStudents() {
+      // Get the container
+      const el = document.getElementById("adminStudents");
+      // Return silently if missing
+      if (!el) return;
+      // Load persisted users
+      const users = loadUsers();
+      // Render users or an empty message
+      el.innerHTML = users.length
+        ? users.map((u, i) =>
+            `<div class="rank-row">
+               <span><strong>${u.name}</strong> &middot; ${u.email}</span>
+               <button class="btn btn-ghost btn-sm" data-userdel="${i}">Remove</button>
+             </div>`
+          ).join("")
+        : "<p>No student accounts registered yet.</p>";
+      // Attach delete handlers
+      el.querySelectorAll("[data-userdel]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          // Remove the user
+          users.splice(parseInt(btn.dataset.userdel, 10), 1);
+          // Save the updated user list
+          localStorage.setItem("moraless_users", JSON.stringify(users));
+          renderAdminStudents();
+          toast("Student account removed.");
+        });
+      });
+    }
+
+    // Render the user account / auth view
+    function renderAuth() {
+      // Build the auth page HTML
+      const html = `
+        <!-- Auth header -->
+        <h2 class="section-title">Your Account</h2>
+        <p class="section-sub">Sign in or register to save your subjects, dates, bookmarks, notes and progress. Guest mode is also available.</p>
+
+        <!-- Guest mode card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Guest mode title -->
+          <h3>Continue as Guest</h3>
+          <p>Explore the platform without an account. Guest progress is saved on this device only.</p>
+          <!-- Continue as guest button -->
+          <button class="btn btn-ghost" style="margin-top:8px;" id="guestBtn">Continue as Guest</button>
+        </div>
+
+        <!-- Register card -->
+        <div class="card" style="margin-bottom:18px;">
+          <!-- Register title -->
+          <h3>Register a New Account</h3>
+          <!-- Full name input -->
+          <input type="text" id="regName" placeholder="Full name" />
+          <!-- Email input -->
+          <input type="email" id="regEmail" placeholder="Email address" />
+          <!-- Password input -->
+          <input type="password" id="regPass" placeholder="Password (min 6 characters)" />
+          <!-- Register button -->
+          <button class="btn btn-primary" style="margin-top:10px;" id="regBtn">Create Account</button>
+        </div>
+
+        <!-- Log in card -->
+        <div class="card">
+          <!-- Log in title -->
+          <h3>Log In</h3>
+          <!-- Email input -->
+          <input type="email" id="logEmail" placeholder="Email address" />
+          <!-- Password input -->
+          <input type="password" id="logPass" placeholder="Password" />
+          <!-- Log in button -->
+          <button class="btn btn-cyan" style="margin-top:10px;" id="logBtn">Log In</button>
+          <!-- Log out button (shown when signed in) -->
+          ${App.user ? `<button class="btn btn-ghost" style="margin-top:10px;" id="logOut">Log Out</button>` : ""}
+        </div>
+      `;
+      // Set the view inner HTML
+      document.getElementById("view").innerHTML = html;
+      // Bind auth events
+      bindAuthEvents();
+    }
+
+    // Bind events for the auth page
+    function bindAuthEvents() {
+      // Continue as guest
+      const guestBtn = document.getElementById("guestBtn");
+      if (guestBtn) {
+        guestBtn.addEventListener("click", () => {
+          // Clear any current user
+          App.user = null;
+          // Navigate to the dashboard
+          navigate("dashboard");
+          // Show a toast
+          toast("You are now in guest mode. Progress is saved on this device.");
+        });
+      }
+      // Register button
+      const regBtn = document.getElementById("regBtn");
+      if (regBtn) {
+        regBtn.addEventListener("click", () => {
+          // Read the registration fields
+          const name = document.getElementById("regName").value.trim();
+          const email = document.getElementById("regEmail").value.trim();
+          const pass = document.getElementById("regPass").value;
+          // Validate the fields
+          if (!name || !email || pass.length < 6) {
+            toast("Please fill all fields with a valid email and a password of 6+ characters.");
+            // Stop here
+            return;
+          }
+          // Load existing users
+          const users = loadUsers();
+          // Check for duplicate email
+          if (users.some(u => u.email === email)) {
+            toast("An account with that email already exists. Please log in.");
+            // Stop here
+            return;
+          }
+          // Create the new user object
+          const newUser = { name, email, password: btoa(pass), createdAt: new Date().toLocaleDateString() };
+          // Push to the users list
+          users.push(newUser);
+          // Persist the users
+          localStorage.setItem("moraless_users", JSON.stringify(users));
+          // Set the current user
+          App.user = { name, email };
+          // Update the auth button label
+          document.getElementById("authBtn").textContent = "Signed In";
+          // Show a toast
+          toast("Account created. Welcome, " + name + "!");
+          // Navigate to the dashboard
+          navigate("dashboard");
+        });
+      }
+      // Log in button
+      const logBtn = document.getElementById("logBtn");
+      if (logBtn) {
+        logBtn.addEventListener("click", () => {
+          // Read the login fields
+          const email = document.getElementById("logEmail").value.trim();
+          const pass = document.getElementById("logPass").value;
+          // Load existing users
+          const users = loadUsers();
+          // Find the matching user
+          const found = users.find(u => u.email === email && u.password === btoa(pass));
+          // Validate the credentials
+          if (!found) {
+            toast("Invalid email or password.");
+            // Stop here
+            return;
+          }
+          // Set the current user
+          App.user = { name: found.name, email: found.email };
+          // Update the auth button label
+          document.getElementById("authBtn").textContent = "Signed In";
+          // Show a toast
+          toast("Welcome back, " + found.name + "!");
+          // Navigate to the dashboard
+          navigate("dashboard");
+        });
+      }
+      // Log out button
+      const logOut = document.getElementById("logOut");
+      if (logOut) {
+        logOut.addEventListener("click", () => {
+          // Clear the current user
+          App.user = null;
+          // Update the auth button label
+          document.getElementById("authBtn").textContent = "Sign In";
+          // Show a toast
+          toast("You have been logged out.");
+          // Re-render the auth page
+          renderAuth();
+        });
+      }
+    }
+
+    // Load and return the persisted study data object
+    function loadStudyData() {
+      // Try to read the stored data
+      const raw = localStorage.getItem(STORAGE_KEY);
+      // If present, parse and return
+      if (raw) {
+        try {
+          // Return the parsed object
+          return JSON.parse(raw);
+        } catch (err) {
+          // If parsing fails, fall through to defaults
+          console.log("Storage read error:", err);
+        }
+      }
+      // Return the default study data structure
+      return {
+        timetable: [],
+        goals: [],
+        notes: [],
+        countdowns: [],
+        announcements: [],
+        activity: [],
+        mastery: []
+      };
+    }
+
+    // Load and return the persisted users array
+    function loadUsers() {
+      // Try to read the stored users
+      const raw = localStorage.getItem("moraless_users");
+      // If present, parse and return
+      if (raw) {
+        try {
+          // Return the parsed users array
+          return JSON.parse(raw);
+        } catch (err) {
+          // If parsing fails, return an empty array
+          return [];
+        }
+      }
+      // Return an empty users array
+      return [];
+    }
+
+    // Persist application data to local storage
+    function saveData() {
+      // Build the persistence payload
+      const payload = {
+        // Include the study data
+        ...loadStudyData(),
+        // Include the stats
+        stats: App.stats
+      };
+      // Write to local storage
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    }
+
+    // Compute the average score percentage
+    function avgScore() {
+      // If no attempts, return zero
+      if (!App.stats.attempted) return 0;
+      // Compute the percentage
+      return Math.round((App.stats.correct / App.stats.attempted) * 100);
+    }
+
+    // Get today's motivational quote
+    function getDailyQuote() {
+      // Pick deterministically by date
+      return Quotes[new Date().getDate() % Quotes.length];
+    }
+
+    // Show a toast notification
+    function toast(message) {
+      // Get the toast element
+      const el = document.getElementById("toast");
+      // Set the toast text
+      el.textContent = message;
+      // Show the toast
+      el.classList.add("show");
+      // Hide it after 2.5 seconds
+      setTimeout(() => el.classList.remove("show"), 2500);
+    }
+
+    // Navigate to a given page view
+    function navigate(page) {
+      // Update the active page in state
+      App.page = page;
+      // Clear any running timers to avoid duplicates
+      if (App.cdTimer) clearInterval(App.cdTimer);
+      if (App.pqMockTimer) clearInterval(App.pqMockTimer);
+      // Update the active navigation link
+      updateActiveNav();
+      // Render the requested view
+      switch (page) {
+        // Home view
+        case "home":
+          // Render home
+          renderHome();
+          // Break
+          break;
+        // Past questions view
+        case "past":
+          // Render past
+          renderPast();
+          // Break
+          break;
+        // Study room view
+        case "study":
+          // Render study
+          renderStudy();
+          // Break
+          break;
+        // Subjects view
+        case "subjects":
+          // Render subjects
+          renderSubjects();
+          // Break
+          break;
+        // Countdown view
+        case "countdown":
+          // Render countdown
+          renderCountdown();
+          // Break
+          break;
+        // Dashboard view
+        case "dashboard":
+          // Render dashboard
+          renderDashboard();
+          // Break
+          break;
+        // About view
+        case "about":
+          // Render about
+          renderAbout();
+          // Break
+          break;
+        // Admin view
+        case "admin":
+          // Render admin
+          renderAdmin();
+          // Break
+          break;
+        // Auth view
+        case "auth":
+          // Render auth
+          renderAuth();
+          // Break
+          break;
+        // Default to home
+        default:
+          // Render home
+          renderHome();
+      }
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
+    }
+
+    // Update the active state on the navigation links
+    function updateActiveNav() {
+      // Get all navigation links
+      const links = document.querySelectorAll("#mainNav a");
+      // Reset all active classes
+      links.forEach(l => l.classList.remove("active"));
+      // Find the matching link and mark it active
+      links.forEach(l => {
+        // If the link page matches the current page, activate it
+        if (l.dataset.page === App.page) l.classList.add("active");
+      });
+      // Close the mobile nav after navigation
+      document.getElementById("mainNav").classList.remove("open");
+    }
+
+    // Initialise the animated star field background
+    function initStars() {
+      // Get the canvas and its context
+      const canvas = document.getElementById("stars");
+      const ctx = canvas.getContext("2d");
+      // Store the star array
+      let stars = [];
+      // Resize the canvas to the viewport
+      function resize() {
+        // Set the canvas width to the window width
+        canvas.width = window.innerWidth;
+        // Set the canvas height to the window height
+        canvas.height = window.innerHeight;
+      }
+      // Create the star objects
+      function createStars() {
+        // Clear the star array
+        stars = [];
+        // Determine the number of stars based on screen size
+        const count = Math.floor((canvas.width * canvas.height) / 6000);
+        // Build the star objects
+        for (let i = 0; i < count; i++) {
+          // Push a star with random position, speed and radius
+          stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 1.5 + 0.3,
+            speed: Math.random() * 0.4 + 0.1,
+            twinkle: Math.random() * Math.PI
+          });
+        }
+      }
+      // Draw and animate the stars
+      function draw() {
+        // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Loop through every star
+        stars.forEach((s, i) => {
+          // Move the star downward slowly
+          s.y += s.speed;
+          // Animate the twinkle
+          s.twinkle += 0.03;
+          // If the star moves off the bottom, reset it to the top
+          if (s.y > canvas.height) s.y = 0;
+          // Compute the twinkle alpha
+          const alpha = 0.4 + Math.sin(s.twinkle) * 0.4;
+          // Set the star color with alpha
+          ctx.fillStyle = "rgba(200, 210, 255, " + alpha + ")";
+          // Draw the star as a small circle
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        // Request the next animation frame
+        requestAnimationFrame(draw);
+      }
+      // Initialise on load
+      resize();
+      createStars();
+      draw();
+      // Re-init on window resize
+      window.addEventListener("resize", () => {
+        resize();
+        createStars();
+      });
+    }
+
+    // Generate and inject the PWA manifest for installability
+    function setupPWA() {
+      // Define the manifest object
+      const manifest = {
+        // Application name
+        name: "MORALES ENTERGALACTIC",
+        // Short name
+        short_name: "MORALES",
+        // Description
+        description: "Reaching to the skies in your mind — exam prep for WAEC, NECO, JAMB and GCE.",
+        // Start URL
+        start_url: ".",
+        // Display mode
+        display: "standalone",
+        // Background color
+        background_color: "#070713",
+        // Theme color
+        theme_color: "#070713",
+        // Orientation
+        orientation: "portrait",
+        // Icons array
+        icons: [
+          // A large icon entry
+          { src: "https://placehold.co/192x192/7c3aed/22d3ee.png?text=M", sizes: "192x192", type: "image/png" },
+          // A larger maskable icon entry
+          { src: "https://placehold.co/512x512/7c3aed/22d3ee.png?text=M", sizes: "512x512", type: "image/png", purpose: "maskable" }
+        ]
+      };
+      // Convert the manifest to a JSON string
+      const blob = new Blob([JSON.stringify(manifest)], { type: "application/json" });
+      // Create an object URL for the manifest
+      const url = URL.createObjectURL(blob);
+      // Set the manifest link href to the generated URL
+      document.getElementById("manifest").href = url;
+    }
+
+    // Wire up global event listeners and initialise the application
+    function init() {
+      // Initialise the star field
+      initStars();
+      // Set up the PWA manifest
+      setupPWA();
+      // Bind the mobile menu toggle
+      document.getElementById("menuToggle").addEventListener("click", () => {
+        // Toggle the mobile nav visibility
+        document.getElementById("mainNav").classList.toggle("open");
+      });
+      // Bind the navigation links
+      document.querySelectorAll("#mainNav a").forEach(link => {
+        // On click, navigate to the link's page
+        link.addEventListener("click", (e) => {
+          // Prevent the default navigation
+          e.preventDefault();
+          // Navigate to the target page
+          navigate(link.dataset.page);
+        });
+      });
+      // Bind footer navigation links
+      document.querySelectorAll("[data-goto]").forEach(el => {
+        // On click, navigate to the target page
+        el.addEventListener("click", (e) => {
+          // Prevent default behaviour
+          e.preventDefault();
+          // Navigate to the requested page
+          navigate(el.dataset.goto);
+        });
+      });
+      // Bind the header auth button
+      document.getElementById("authBtn").addEventListener("click", () => {
+        // Navigate to the auth view
+        navigate("auth");
+      });
+      // Restore persisted stats into state
+      const stored = loadStudyData();
+      // If stored stats exist, merge them
+      if (stored.stats) App.stats = stored.stats;
+      // Update the auth button label if a user is remembered
+      if (App.user) document.getElementById("authBtn").textContent = "Signed In";
+      // Render the initial home view
+      navigate("home");
+    }
+
+    // Run initialisation once the DOM is ready
+    document.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>
